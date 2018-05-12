@@ -9,19 +9,27 @@
       width: 100%;
       float: left;
     }
+    article:not(:target){
+      display: none
+    }
+    article:target{
+      display: block
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#page-one">首页</a>
-    <a href="#page-two">文章</a>
-    <a href="#page-three">个人说明</a>
+  <header>
+    <h1 style="color: red;text-align: center">main2017的博客</h1>
+    <nav>
+      <a href="#page-one">首页</a>
+      <a href="#page-two">文章</a>
+      <a href="#page-three">个人说明</a>
   </nav>
+  </header>
   <section>
     <article id="page-one">page-one</article>
     <article id="page-two">page-two</article>
     <article id="page-three">page-three</article>
   </section>
-  <h1 style="color: red;text-align: center">main2017的博客</h1>
 </body>
 </html>
