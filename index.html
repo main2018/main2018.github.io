@@ -41,6 +41,7 @@
     <article id="page-two">page-two</article>
     <article id="page-three">page-three</article>
   </section>
+  <video id="video"></video>
   <script type="text/javascript">
     // 老的浏览器可能根本没有实现 mediaDevices，所以我们可以先设置一个空的对象
     if (navigator.mediaDevices === undefined) {
@@ -67,7 +68,7 @@
       }
     }
 
-    navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+    navigator.mediaDevices.getUserMedia({ audio: false, video: true })
       .then(function(stream) {
         var video = document.querySelector('video');
         // 旧的浏览器可能没有srcObject
