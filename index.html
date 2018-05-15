@@ -79,6 +79,7 @@
           video.src = window.URL.createObjectURL(stream);
         }
         video.onloadedmetadata = function(e) {
+          alert(123)
           video.play();
         };
       })
