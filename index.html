@@ -179,7 +179,6 @@
           video.src = window.URL.createObjectURL(stream);
         }
         video.onloadedmetadata = function(e) {
-          alert(123)
           video.play();
         };
       })
@@ -190,7 +189,7 @@
       let t = setTimeout(() => {
         document.querySelector('.loader-box').style.display = 'none'
         clearTimeout(t)
-      }, 3000)
+      }, 6000)
     }
     hideLoading()
   </script>
