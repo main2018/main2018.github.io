@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>生成二维码</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type='text/javascript' src='http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js'></script>
+  <script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <form @submit.prevent="make">
+      选择颜色
+      <input type="color" v-model="color">
+      <br>
+      设置宽度：0
+      <input type="range" name="volume" min="10" max="500" v-model="width">
+      500
+      <br>
+      <input type="search" placeholder="请输入任意字符" v-model="val">
+      <input type="submit" value="提交">
+      <div id="qrcode"></div>
+    </form>
+  </div>
+</body>
+</html>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        val: '',
+        color: '#C00000',
+        width: 100
+      }
+    },
+    methods: {
+      make() {
+        /* eslint-disable */
+        // $('#qrcode').qrcode('http://www.baidu.com')
+        jQuery('#qrcode').qrcode({
+          render: "canvas", //也可以替换为table
+          width: this.width,
+          height: this.width,
+          foreground: this.color,
+          background: "#fff",
+          text: this.val
+        })
+      }
+    }
+  })
+</script>

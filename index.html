@@ -2,266 +2,204 @@
 <head>
   <title>王攀的个人博客</title>
   <meta charset="utf-8">
-  <style>
-    /* xiugaile  */
-    body{
-      margin: 0;
-      padding: 0;
-      background-color: rgba(0, 0, 255, .1);
-      font-size: 1.4rem;
-    }
-    @media only screen and (min-width : 1200px) {
-      body {font-size: 1rem;}
-    }
-    canvas {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: -1;
-    }
-    nav{
-      display: flex
-    }
-    nav>a{
-      flex: 1
-    }
-    section{
-      overflow: hidden
-    }
-    article{
-      width: 100%;
-      float: left;
-    }
-    article:not(:target){
-      display: none
-    }
-    article:target{
-      display: block
-    }
-    .loader-box{
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .loader {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .loader {
-      width: 10em;
-      height: 10em;
-      font-size: 28px;
-      position: relative;
-    }
-
-    .loader span {
-      position: absolute;
-      background-color: rgba(100%, 0%, 0%, 0.3);
-      box-sizing: border-box;
-      border: 0.5em solid;
-      border-color: white rgba(100%, 100%, 100%, 0.2);
-      animation: animate 5s ease-in-out infinite alternate;
-    }
-
-    .loader span:nth-child(1) {
-      width: calc(20% + 20% * (5 - 1));
-      height: calc(20% + 20% * (5 - 1));
-      animation-delay: calc(0.2s * (5 - 1));
-    }
-
-    .loader span:nth-child(2) {
-      width: calc(20% + 20% * (5 - 2));
-      height: calc(20% + 20% * (5 - 2));
-      animation-delay: calc(0.2s * (5 - 2));
-    }
-
-    .loader span:nth-child(3) {
-      width: calc(20% + 20% * (5 - 3));
-      height: calc(20% + 20% * (5 - 3));
-      animation-delay: calc(0.2s * (5 - 3));
-    }
-
-    .loader span:nth-child(4) {
-      width: calc(20% + 20% * (5 - 4));
-      height: calc(20% + 20% * (5 - 4));
-      animation-delay: calc(0.2s * (5 - 4));
-    }
-
-    .loader span:nth-child(5) {
-      width: calc(20% + 20% * (5 - 5));
-      height: calc(20% + 20% * (5 - 5));
-      animation-delay: calc(0.2s * (5 - 5));
-    }
-
-    @keyframes animate {
-      0% {
-        /* red */
-        background-color: rgba(100%, 0%, 0%, 0.3);
-        transform: rotate(0deg);
-      }
-
-      25% {
-        /* yellow */
-        background-color: rgba(100%, 100%, 0%, 0.3);
-      }
-
-      50% {
-        /* green */
-        background-color: rgba(0%, 100%, 0%, 0.3);
-      }
-
-      75% {
-        /* blue */
-        background-color: rgba(0%, 0%, 100%, 0.3);
-      }
-
-      100% {
-        /* purple */
-        background-color: rgba(100%, 0%, 100%, 0.3);
-        transform: rotate(720deg);
-      }
-    }
-  </style>
-  <script>
-    // 750px的设计图以375px量长宽 375的屏幕。font-size=10px
-    // 有些手机设备用documentElement拿不到
-    document.documentElement.style.fontSize = (document.documentElement.clientWidth || document.body.clientWidth) / 37.5 + 'px' // 1rem = 10px
-  </script>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="#page-one">首页</a>
-      <a href="#page-two">文章</a>
-      <a href="#page-three">个人说明</a>
-  </nav>
-  </header>
-  <section>
-    <article id="page-one"><a href="./webRtc.html">webRtc</article>
-    <article id="page-two">page-two</article>
-    <article id="page-three">page-three</article>
-  </section>
-  <div class="loader-box">
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <canvas id="cas" width="351" height="672"></canvas>
-  <script type="text/javascript">
-    function hideLoading() {
-      let t = setTimeout(() => {
-        document.querySelector('.loader-box').style.display = 'none'
-        clearTimeout(t)
-      }, 5000)
-    }
-    hideLoading()
-  </script>
+<body class="no-touch">
+  <div id="app">
+    <main class="cd-main" :class="{'fold-is-open': isOpen}">
+      <header ref="header">
+        <div class="head-info">
+          <div>
+            <h1>
+              HI MY NAME IS
+              <span>LAN</span>
+            </h1>
+            <p>I am a web developer.</p>
+          </div>
+            
+        </div>
+          
+        <div class="user-img">
+          <img src="./avatar.jpg" alt="">
+        </div>
+        <div class="color"></div>
+      </header>
+        
+      <ul class="cd-gallery" ref="cdGallery">
+        <li class="cd-item" @click="open" v-for="item in 4">
+          <a link="product">
+            <div>
+              <h2>我的作品</h2>
+              <p>一些开源的工具，框架，控件.</p>
+              <b>Umock</b>
+            </div>
+          </a>
+        </li>
+      </ul>
+      
+    </main> 
+    <div class="cd-folding-panel" :class="{'is-open': isOpen}">
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+      <div class="cd-fold-content">
+        <p>
+          <em>一些作品</em>
+        </p>
+        <h2><a href="./qrcode.html" target="_blank">二维码生成小工具</a></h2>
+        <p>Vue2.0 UI Components。</p>
+        <p>HEYUI，快速构建前端工具。</p>
+
+        <h2><a href="./webRtc.html" target="_blank">webRtc</a></h2>
+        <p>webpack脚手架，hot-dev-server，build。 </p>
+        <p>不需要理解webpack，只需要知道如何配置就可以使用，摆脱繁琐重复的webpack配置。</p>
+
+        <h2><a href="https://www.npmjs.com/package/umock" target="_blank">umock</a></h2>
+        <p>服务器端的Mock Server，无需等待后端，前端可以提前独自开发。</p>
+        <p>完善每个接口的文档，让所有的人都能快速开发。</p>
+
+        <h2><a href="http://manba.ch-un.com" target="_blank">manba</a></h2>
+        <p>迷你的js日期处理Util，比moment更小，更简洁</p>
+
+        <h2><a href="https://www.npmjs.com/package/js-model" target="_blank">model</a></h2>
+        <p>建立前端的数据模型，数据标准化。</p>
+        <p>扩展为nodejs的数据模型管理。</p>
+      </div>
+      <a class="cd-close" @click="isOpen = false"></a>
+    </div> 
+  </div>  
   <script>
-    var canvas = document.getElementById("cas");
-    var ctx = canvas.getContext("2d");
-    resize();
-    window.onresize = resize;
-    function resize() {
-      canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    }
-    var RAF = (function() {
-      return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-          window.setTimeout(callback, 1000 / 60);
-        };
-    })();
-    // 鼠标活动时，获取鼠标坐标
-    var warea = {x: null, y: null, max: 20000};
-    window.onmousemove = function(e) {
-      e = e || window.event;
-      warea.x = e.clientX;
-      warea.y = e.clientY;
-    };
-    window.onmouseout = function(e) {
-      warea.x = null;
-      warea.y = null;
-    };
-    // 添加粒子
-    // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
-    var dots = [];
-    for (var i = 0; i < 300; i++) {
-      var x = Math.random() * canvas.width;
-      var y = Math.random() * canvas.height;
-      var xa = Math.random() * 2 - 1;
-      var ya = Math.random() * 2 - 1;
-      dots.push({
-        x: x,
-        y: y,
-        xa: xa,
-        ya: ya,
-        max: 6000
-      })
-    }
-    // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
-    setTimeout(function() {
-      animate();
-    }, 100);
-    // 每一帧循环的逻辑
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
-      var ndots = [warea].concat(dots);
-      dots.forEach(function(dot) {
-        // 粒子位移
-        dot.x += dot.xa;
-        dot.y += dot.ya;
-        // 遇到边界将加速度反向
-        dot.xa *= (dot.x > canvas.width || dot.x < 0) ? -1 : 1;
-        dot.ya *= (dot.y > canvas.height || dot.y < 0) ? -1 : 1;
-        // 绘制点
-        ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
-        // 循环比对粒子间的距离
-        for (var i = 0; i < ndots.length; i++) {
-          var d2 = ndots[i];
-          if (dot === d2 || d2.x === null || d2.y === null) continue;
-          var xc = dot.x - d2.x;
-          var yc = dot.y - d2.y;
-          // 两个粒子之间的距离
-          var dis = xc * xc + yc * yc;
-          // 距离比
-          var ratio;
-          // 如果两个粒子之间的距离小于粒子对象的max值，则在两个粒子间画线
-          if (dis < d2.max) {
-            // 如果是鼠标，则让粒子向鼠标的位置移动
-            if (d2 === warea && dis > (d2.max / 2)) {
-              dot.x -= xc * 0.03;
-              dot.y -= yc * 0.03;
-            }
-            // 计算距离比
-            ratio = (d2.max - dis) / d2.max;
-            // 画线
-            ctx.beginPath();
-            ctx.lineWidth = ratio / 2;
-            ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
-            ctx.moveTo(dot.x, dot.y);
-            ctx.lineTo(d2.x, d2.y);
-            ctx.stroke();
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        isOpen: false
+      },
+      watch: {
+        isOpen(bol) {
+          // document.body.classList.toggle('overflow-hidden', bol)
+          if (!bol) {
+            setTimeout(() => {
+              document.body.classList.toggle('overflow-hidden', bol)
+            }, 1000)
+          } else {
+            document.body.classList.toggle('overflow-hidden', bol)
           }
         }
-        // 将已经计算过的粒子从数组中删除
-        ndots.splice(ndots.indexOf(dot), 1);
-      });
-      RAF(animate);
-    }
+      },
+      mounted() {
+        this.createCanvas()
+      },
+      methods: {
+        open() {
+          let pageWidth = document.documentElement.clientWidth
+          if (pageWidth < 1100) {
+            this.isOpen = true
+            return
+          }
+          this.$refs.cdGallery.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'start'})
+          setTimeout(() => {
+            this.isOpen = true
+          }, 500);
+        },
+        createCanvas() {
+          var canvas = document.createElement('canvas')
+          var ctx = canvas.getContext('2d')
+          resize()
+          window.onresize = resize
+          function resize() {
+            canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+            canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+          }
+          var RAF = (function () {
+            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+              window.setTimeout(callback, 1000 / 60)
+            }
+          })()
+          // 鼠标活动时，获取鼠标坐标
+          var warea = {x: null, y: null, max: 20000}
+          window.onmousemove = function (e) {
+            e = e || window.event
+            warea.x = e.clientX
+            warea.y = e.clientY
+          }
+          window.onmouseout = function (e) {
+            warea.x = null
+            warea.y = null
+          }
+          // 添加粒子
+          // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
+          var dots = []
+          for (var i = 0; i < 300; i++) {
+            var x = Math.random() * canvas.width
+            var y = Math.random() * canvas.height
+            var xa = Math.random() * 2 - 1
+            var ya = Math.random() * 2 - 1
+            dots.push({
+              x: x,
+              y: y,
+              xa: xa,
+              ya: ya,
+              max: 6000
+            })
+          }
+          // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
+          setTimeout(function () {
+            animate()
+          }, 100)
+          // 每一帧循环的逻辑
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
+            var ndots = [warea].concat(dots)
+            dots.forEach(function (dot) {
+              // 粒子位移
+              dot.x += dot.xa
+              dot.y += dot.ya
+              // 遇到边界将加速度反向
+              dot.xa *= (dot.x > canvas.width || dot.x < 0) ? -1 : 1
+              dot.ya *= (dot.y > canvas.height || dot.y < 0) ? -1 : 1
+              // 绘制点
+              ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1)
+              // 循环比对粒子间的距离
+              for (var i = 0; i < ndots.length; i++) {
+                var d2 = ndots[i]
+                if (dot === d2 || d2.x === null || d2.y === null) continue
+                var xc = dot.x - d2.x
+                var yc = dot.y - d2.y
+                // 两个粒子之间的距离
+                var dis = xc * xc + yc * yc
+                // 距离比
+                var ratio
+                // 如果两个粒子之间的距离小于粒子对象的max值，则在两个粒子间画线
+                if (dis < d2.max) {
+                  // 如果是鼠标，则让粒子向鼠标的位置移动
+                  if (d2 === warea && dis > (d2.max / 2)) {
+                    dot.x -= xc * 0.03
+                    dot.y -= yc * 0.03
+                  }
+                  // 计算距离比
+                  ratio = (d2.max - dis) / d2.max
+                  // 画线
+                  ctx.beginPath()
+                  ctx.lineWidth = ratio / 2
+                  ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')'
+                  ctx.moveTo(dot.x, dot.y)
+                  ctx.lineTo(d2.x, d2.y)
+                  ctx.stroke()
+                }
+              }
+              // 将已经计算过的粒子从数组中删除
+              ndots.splice(ndots.indexOf(dot), 1)
+            })
+            RAF(animate)
+          }
+          canvas.style.cssText = ';position: absolute; left: 0;opacity: 0.5;'
+          this.$refs.header.prepend(canvas)
+        },
+      },
+    })
   </script>
 </body>
 </html>
