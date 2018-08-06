@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>font3d</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      height: 100vh;
+      overflow: hidden;
+    }
+    .box>div {
+      height: 50%;
+      overflow-y: auto;
+    }
+    .box-top{
+      word-break: break-all
+    }
+    .copy{
+      position: fixed;
+      right: 50px;
+      top: 100px;
+      padding: 10px;
+      height: auto!important;
+      background-color: rgba(0,0,0,.6);
+      color: #fff;
+    }
+    .box-bottom{
+      position: relative;
+      line-height: 50vh;
+      text-align: center;
+      background-color: #ccc
+    }
+    input{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="box-top">
+    </div>
+    <div class="copy" onclick="selectText(this.previousElementSibling)">复制</div>
+    <div class="box-bottom">
+      <input type="file" onchange="fileToBase64(this.files[0])">
+      任意文件拖到这里\A或者点击选择文件
+    </div>
+  </div>
+</body>
+<script>
+  /* eslint-disable */
+  function addDragEvent() {
+    window.addEventListener("dragenter", function(event) { event.preventDefault(); }, false);
+    window.addEventListener("dragover", function(event) { event.preventDefault(); }, false);
+    window.addEventListener("drop", function(event) {
+      let file = event.dataTransfer.files[0]
+      fileToBase64(file)
+      event.preventDefault();
+    }, false);
+  }
+  addDragEvent()
+  function fileToBase64(file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      // document.body.insertAdjacentElement("afterBegin", p);
+      let div = document.querySelector('.box-top')
+      div.innerText = e.target.result
+    };
+    reader.readAsDataURL(file);
+  }
+  function selectText(dom) {
+    let range
+    if (document.selection) { // IE
+      range = document.body.createTextRange()
+      range.moveToElementText(dom)
+      range.select()
+    } else if (window.getSelection) { // 其它
+      range = document.createRange()
+      range.selectNodeContents(dom)
+      window.getSelection().removeAllRanges()
+      window.getSelection().addRange(range)
+    }
+    let val = window.getSelection().toString()
+    console.log('val', val)
+    alert('已复制到剪切板，Ctrl + V 粘贴')
+  }
+</script>
+</html>
