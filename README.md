@@ -38,11 +38,13 @@ u=702257389,1274025419&fm=27&gp=0.jpg "图片title")
     fun();
 ```
 ###### 流程图
-flow
-st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
+```
+  flow
+  st=>start: Start
+  op=>operation: Your Operation
+  cond=>condition: Yes or No?
+  e=>end
+  st->op->cond
+  cond(yes)->e
+  cond(no)->op
+```
