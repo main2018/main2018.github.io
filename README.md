@@ -17,11 +17,11 @@ u=702257389,1274025419&fm=27&gp=0.jpg "图片title")
 + 列表内容
 * 列表内容
 ###### 有序列表
-1.列表内容
-2.列表内容
-3.列表内容
+1 列表内容
+2 列表内容
+3 列表内容
 ###### 列表嵌套 上一级和下一级之间敲三个空格即可
-1.列表内容
+1 列表内容
    01
    02
 ###### 表格
@@ -38,12 +38,11 @@ u=702257389,1274025419&fm=27&gp=0.jpg "图片title")
     fun();
 ```
 ###### 流程图
-```flow
-st=>start: 开始
-op=>operation: My Operation
+flow
+st=>start: Start
+op=>operation: Your Operation
 cond=>condition: Yes or No?
 e=>end
 st->op->cond
 cond(yes)->e
 cond(no)->op
-&```
