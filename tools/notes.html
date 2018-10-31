@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+  一、 . 运算符
+  对于 . 运算符我们需要给予特别注意，因为它是一个有效的数字字符，会被优先识别为数字常量的一部分，然后才是对象属性访问运算符。
+  // 无效语法：
+  42.toFixed( 3 ); // SyntaxError
+  // 下面的语法都有效：
+  (42).toFixed( 3 ); // "42.000" 
+  0.42.toFixed( 3 ); // "0.420"
+  42..toFixed( 3 ); // "42.000"
+  42 .toFixed(3); // "42.000"（注意其中的空格）
+  三、0.1 + 0.2 === 0.3 ？
+  在js中:
+  0.1 + 0.2 === 0.3; // false
+  关于这个问题，感兴趣的同学可以读读王二的转载的一篇文章抓住数据的小尾巴 - JS浮点数陷阱及解法，由于 JavaScript 中的数字类型是基于 IEEE754 标准来实现的，所以二进制浮点数中的 0.1 和 0.2 相加并不是十分精确，这时候可以使用 Number.EPSILON 来比较两个数字是否相等（在指定的误差范围内）：
+  function numbersCloseEnoughToEqual(n1,n2) { 
+      return Math.abs( n1 - n2 ) < Number.EPSILON;
+  }
+  var a = 0.1 + 0.2;
+  var b = 0.3;
+  numbersCloseEnoughToEqual( a, b );   //true
+  五、isNaN()
+  我们可以使用全局工具函数 window.isNaN() 和 ES6中的 Number.isNaN() 来判断一个值是不是 NaN,但这两者也有区别，参考如下代码：
+  Number.isNaN( NaN ); // true
+  Number.isNaN( "wanger" ); // false 
+  Number.isNaN( 5 ); // false
+
+  window.isNaN( NaN ); // true
+  window.isNaN( "wanger" ); // true 
+  window.isNaN( 5 ); // false
+  ``` 
+  很明显 "wanger" 不是一个数字 ，它也不是 NaN 。但是 `window.isNaN( "wanger" )`显示为true, 这个 bug自 JavaScript 问世以来就一直存在。
+  ### 六、`Object.prototype.toString` 可以查看类型
+  ```js
+  Object.prototype.toString.call( [1,2,3] ); // "[object Array]"
+  Object.prototype.toString.call( /regex-literal/i ); // "[object RegExp]"
+  Object.prototype.toString.call( null ); // "[object Null]"
+  Object.prototype.toString.call( undefined ); //"[object Undefined]"
+  Object.prototype.toString.call( "abc" ); // "[object String]"
+  Object.prototype.toString.call( 42 ); // "[object Number]"
+  Object.prototype.toString.call( true ); // "[object Boolean]"
+  八、假值对象
+  先看一段代码：
+  console.log(document.all)  //会返回页面上的所有元素
+
+  if(document.all){
+      console.log("test")    //不会答应 "test"
+  }
+  最常见的假值对象是 document.all ，它是一个类数组对象，包含了页面上的所有元素，由 DOM（而不是 JavaScript 引擎）提供
+  给 JavaScript 程序使用。它以前曾是一个真正意义上的对象，布尔强制类型转换结果为 true ，不过现在它是一个假值对象。
+
+  虽然 JavaScript 代码中会出现假值对象，但它实际上并不属于 JavaScript 语言的范畴。但这里仍然有必要注意一下。
+
+  需要注意的是，为我们经常通过将 document.all 强制类型转换为布尔值（比如在 if 语句中）来判断浏览器是
+  否是老版本的 IE，如下：
+
+  if(document.all) { /* it's IE */ }
+  十一、假值的相等比较
+  == 中的隐式强制类型转换最为人诟病的地方是假值的相等比较。
+
+  下面分别列出了常规和非常规的情况：
+  "0" == null; // false
+  "0" == undefined; // false 
+  "0" == false; // true -- 晕！
+  "0" == NaN; // false
+  "0" == 0; // true 
+  "0" == ""; // false
+  false == null; // false 
+  false == undefined; // false 
+  false == NaN; // false
+  false == 0; // true -- 晕！
+  false == ""; // true -- 晕！
+  false == []; // true -- 晕！
+  false == {}; // false
+  "" == null; // false
+  "" == undefined; // false 
+  "" == NaN; // false 
+  "" == 0; // true -- 晕！
+  "" == []; // true -- 晕！
+  "" == {}; // false
+  0 == null; // false 
+  0 == undefined; // false 
+  0 == NaN; // false
+  0 == []; // true -- 晕！
+  0 == {}; // false
+
+</body>
+</html>
