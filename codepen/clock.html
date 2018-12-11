@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+    }
+
+    svg {
+      display: block;
+      margin: calc(50vh - 50vmin) auto;
+      min-width: 15em;
+      min-height: 15em;
+      width: 100vmin;
+      height: 100vmin;
+      max-width: 100em;
+      max-height: 100em;
+      font-size: 1em;
+    }
+
+    * {
+      vector-effect: non-scaling-stroke;
+    }
+
+    [id*='mark'] {
+      stroke: #eee;
+    }
+
+    [id='mark--major'] {
+      stroke-width: 7;
+    }
+
+    [id='mark--minor'] {
+      stroke-width: 2;
+    }
+
+    [id='ticks'] text {
+      dominant-baseline: middle;
+      text-anchor: middle;
+      font: 20px verdana, sans-serif;
+      fill: #aaa;
+    }
+    [id='ticks'] .quad {
+      font: 700 28px verdana, sans-serif;
+      fill: #eee;
+    }
+
+    .hand--h, .hand--m {
+      stroke: #eee;
+      stroke-linecap: round;
+    }
+    .hand--h line:nth-child(2), .hand--m line:nth-child(2) {
+      stroke: #4ca454;
+      stroke-width: 3;
+    }
+    .hand--h {
+      stroke-width: 7;
+    }
+    .hand--m {
+      stroke-width: 5;
+    }
+    .hand--s {
+      stroke: #be4c39;
+    }
+    .hand--s line {
+      stroke-width: 2;
+    }
+    .hand--s circle {
+      fill: #e18728;
+    }
+    .hand--s circle:nth-of-type(2) {
+      fill: #e0a197;
+    }
+
+    [id='arc'] {
+      fill: transparent;
+      stroke: #4ca454;
+      stroke-width: 4;
+      stroke-linecap: round;
+    }
+
+    [id='vertex'] {
+      fill: #4ca454;
+    }
+
+    .counterclockwise [id='vertex'] {
+      fill: #be4c39;
+    }
+    .counterclockwise [id='arc'] {
+      stroke: #be4c39;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- pug
+  - var r = 450;
+  - var d = 2*r;
+  - var clock_r = .8*r;
+  - var arc_r = .5*(clock_r + r);
+  - var mark_major_len = .08*clock_r;
+  - var mark_minor_len = .04*clock_r;
+  
+  svg(viewbox=[-r, -r, d, d].join(' '))
+    defs
+      line(id='mark--major' y1=mark_major_len)
+      line(id='mark--minor' y1=mark_minor_len)
+      circle(id='cc' r=clock_r)
+      
+    g(id='ticks')
+    
+    g(id='hands')
+      g(class='hand--h')
+        line(y2=-.65*clock_r)
+        line(y1=-.38*clock_r y2=-.57*clock_r)
+      g(class='hand--m' transform='rotate(25)')
+        line(y2=-.83*clock_r)
+        line(y1=-.56*clock_r y2=-.75*clock_r)
+      g(class='hand--s' transform='rotate(60)')
+        line(y1=.1*clock_r y2=-.95*clock_r)
+        circle(r=.04*clock_r)
+        circle(r=.02*clock_r)
+    
+    g(id='progress')
+      path(id='arc')
+      polygon(id='vertex' points=`0,${-arc_r} -39,${-arc_r - 20} -20,${-arc_r}  -39,${-arc_r + 20}`) -->
+  
+  <svg viewbox="-450 -450 900 900">
+    <defs>
+      <line id="mark--major" y1="28.8"></line>
+      <line id="mark--minor" y1="14.4"></line>
+      <circle id="cc" r="360"></circle>
+    </defs>
+    <g id="ticks"></g>
+    <g id="hands">
+      <g class="hand--h">
+        <line y2="-234"></line>
+        <line y1="-136.8" y2="-205.2"></line>
+      </g>
+      <g class="hand--m" transform="rotate(25)">
+        <line y2="-298.8"></line>
+        <line y1="-201.60000000000002" y2="-270"></line>
+      </g>
+      <g class="hand--s" transform="rotate(60)">
+        <line y1="36" y2="-342"></line>
+        <circle r="14.4"></circle>
+        <circle r="7.2"></circle>
+      </g>
+    </g>
+    <g id="progress">
+      <path id="arc"></path>
+      <polygon id="vertex" points="0,-405 -39,-425 -20,-405  -39,-385"></polygon>
+    </g>
+  </svg>
+</body>
+</html>
+<script>
+  /* because IE */
+  Math.sign = Math.sign || function(x) {
+    x = +x; // convert to a number
+    if (x === 0 || isNaN(x)) {
+      return x;
+    }
+    return x > 0 ? 1 : -1;
+  }
+
+  /* because me lazy */
+  Object.getOwnPropertyNames(Math).map(function(p) {
+    window[p] = Math[p];
+  });
+
+  Node.prototype.setAttrs = function(attr_obj) {
+    for(var prop in attr_obj) {
+      this.setAttribute(prop, attr_obj[prop]);
+    }
+  };
+
+  var NS_URI = 'http://www.w3.org/2000/svg', 
+      XLink_NS = 'http://www.w3.org/1999/xlink', 
+      
+      ns = 60, 
+      mi = 5, 
+      qi = .25*ns, 
+      r = ~~document.getElementById('cc').getAttribute('r'),
+      svg = document.querySelector('svg'), 
+      wrap = document.getElementById('ticks'), 
+      h_el = document.querySelector('.hand--h'), 
+      m_el = document.querySelector('.hand--m'), 
+      s_el = document.querySelector('.hand--s'), 
+      h_max = 12, h_rad = 2*PI/h_max, h_deg = 360/h_max, 
+      m_max = 60, m_rad = 2*PI/m_max, m_deg = 360/m_max, 
+      s_max = 60, s_rad = 2*PI/s_max, s_deg = 360/s_max, 
+      ms_max = 1000, ms_rad = s_rad/ms_max, ms_deg = s_deg/ms_max, 
+      prev_s, 
+      p_el = document.getElementById('progress'), 
+      a_el = document.getElementById('arc'), 
+      v_el = document.getElementById('vertex'),
+      arc_r = -1*v_el.getAttribute('points').split(' ')[0].split(',')[1], 
+      clockwise = true;
+
+  var init = function () {
+    var frag = document.createDocumentFragment(), 
+        curr_tick_group, curr_tick, text0, text1, 
+        is_major, is_quad, ref, 
+        curr_angle, base_angle = 360/ns, bb;
+    
+    for(var i = 0; i < ns; i++) {
+      is_major = (i%mi === 0);
+      is_quad = (i%qi === 0);
+      
+      ref = '#mark--' + (is_major ? 'major' : 'minor');
+      curr_angle = i*base_angle
+      
+      curr_tick_group = document.createElementNS(NS_URI, 'g');
+      curr_tick = document.createElementNS(NS_URI, 'use');
+      curr_tick.setAttributeNS(XLink_NS, 'xlink:href', ref);
+      
+      curr_tick.setAttribute(
+        'transform', 
+        'rotate(' + curr_angle + ')' + 
+        'translate(0 -' + r + ')'
+      );
+      
+      if(is_major) {
+        curr_tick.setAttribute('class', 'major');
+        
+        text1 = document.createElementNS(NS_URI, 'text');
+        text1.textContent = i;
+        
+        text1.setAttribute(
+          'transform', 
+          'rotate(' + curr_angle + ')' + 
+          'translate(0 -' + 1.05*r + ')' + 
+          'rotate(' + -curr_angle + ')'
+        );
+        curr_tick_group.appendChild(text1);
+        
+        if(is_quad) {
+          curr_tick.setAttribute('class', 'major quad');
+          
+          text2 = document.createElementNS(NS_URI, 'text');
+          text2.textContent = (i/mi) || 12;
+          
+          text2.setAttrs({
+            'class': 'quad', 
+            'transform': 
+            'rotate(' + curr_angle + ')' + 
+            'translate(0 -' + .8*r + ')' + 
+            'rotate(' + -curr_angle + ')'
+          });
+          curr_tick_group.appendChild(text2);
+        }
+      }
+      
+      curr_tick_group.appendChild(curr_tick);
+      frag.appendChild(curr_tick_group);
+    }
+    
+    wrap.appendChild(frag);
+    
+    run();
+  };
+
+  var run = function() {
+    var t = new Date(), 
+        h = t.getHours(), curr_s_deg, curr_s_rad, 
+        m = t.getMinutes(), curr_m_deg,
+        s = t.getSeconds(), curr_h_deg, 
+        ms = t.getMilliseconds(), curr_ms_deg, curr_ms_rad, 
+        x, y, d_txt, j;
+    
+    j = (s >= .5*s_max)*1;
+    d_txt = 'M0,' + -arc_r + 
+        'A' + arc_r + ' ' + arc_r + ' 0 ' + j + ' 1 ';
+    
+    curr_s_rad = (s%s_max - (curr_s_deg > 10)*.5)*s_rad - .5*PI;
+    curr_ms_rad = curr_s_rad + ms*ms_rad;
+    curr_s_deg = (s%s_max)*s_deg;
+    curr_ms_deg = curr_s_deg + ms*ms_deg;
+    x = arc_r*cos(curr_ms_rad);
+    y = arc_r*sin(curr_ms_rad);
+
+    d_txt += x + ' ' + y;
+
+    a_el.setAttribute('d', d_txt);
+    
+    if(curr_s_deg < 10) {
+      if(v_el.style.display !== 'none'){
+        v_el.style.display = 'none';
+      }
+    }
+    else {
+      if(v_el.style.display !== ''){
+        v_el.style.display = '';
+      }
+
+      v_el.setAttribute(
+        'transform', 
+        'rotate(' + curr_ms_deg + ')'
+      );
+    }
+      
+    if(s != prev_s) {	
+      curr_s_deg = (s%s_max)*s_deg;
+      s_el.setAttribute(
+        'transform', 
+        'rotate(' + curr_s_deg + ')'
+      );
+
+      if(curr_s_deg < 10) {
+        if(v_el.style.display !== 'none'){
+          v_el.style.display = 'none';
+        }
+      }
+      else {
+        if(v_el.style.display !== ''){
+          v_el.style.display = '';
+        }
+
+        v_el.setAttribute(
+          'transform', 
+          'rotate(' + curr_s_deg + ')'
+        );
+      }
+
+      curr_m_deg = ((m%m_max) + s/s_max)*m_deg;
+      m_el.setAttribute(
+        'transform', 
+        'rotate(' + curr_m_deg + ')'
+      );
+
+      curr_h_deg = ((h%h_max) + m/m_max)*h_deg;
+      h_el.setAttribute(
+        'transform', 
+        'rotate(' + curr_h_deg + ')'
+      );
+    }
+    
+    prev_s = s;
+    
+    requestAnimationFrame(run);
+  };
+
+  var revert = function () {
+    clockwise = !clockwise;
+    p_el.setAttribute('class', (!clockwise)?'counterclockwise':'');
+    p_el.setAttribute('transform', 'scale(' + (clockwise?1:-1) + ' 1)');
+  };
+
+  init();
+
+  svg.addEventListener('click', revert, false);
+</script>

@@ -30,11 +30,11 @@
       </header>
         
       <ul class="cd-gallery" ref="cdGallery">
-        <li class="cd-item" @click="open" v-for="item in 4">
+        <li class="cd-item" @click="open(index)" v-for="item, index in menus">
           <a link="product">
             <div>
-              <h2>我的作品</h2>
-              <p>一些开源的工具，框架，控件.</p>
+              <h2>{{item.title}}</h2>
+              <p>{{item.desc}}</p>
               <b>Umock</b>
             </div>
           </a>
@@ -42,7 +42,7 @@
       </ul>
       
     </main> 
-    <div class="cd-folding-panel" :class="{'is-open': isOpen}">
+    <div class="cd-folding-panel" :class="{'is-open': isOpen}" v-show="currentIndex !== 1">
       <div class="fold-left"></div>
       <div class="fold-right"></div>
       <div class="cd-fold-content">
@@ -68,9 +68,26 @@
         <p>建立前端的数据模型，数据标准化。</p>
         <p>扩展为nodejs的数据模型管理。</p>
         
-        <h2><a href="./tools/resume.html" target="_blank">笔记</a></h2>
+        <h2><a href="./tools/resume.html" target="_blank">个人简历。</a></h2>
         <p>个人简历。</p>
         <p>扩展为nodejs的数据模型管理。</p>
+      </div>
+      <a class="cd-close" @click="isOpen = false"></a>
+    </div> 
+    <div class="cd-folding-panel" :class="{'is-open': isOpen}" v-show="currentIndex === 1">
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+      <div class="cd-fold-content">
+        <p>
+          <em>效果展示</em>
+        </p>
+        <h2><a href="./codepen/index.html" target="_blank">codepen</a></h2>
+        <p>codepen搬运</p>
+
+        <h2><a href="./live/index.html" target="_blank">生活累积</a></h2>
+        <p>生活累积</p>
+        <p>一天一小点，一年一大片。</p>
+        
       </div>
       <a class="cd-close" @click="isOpen = false"></a>
     </div> 
@@ -80,7 +97,14 @@
       el: '#app',
       data: {
         message: 'Hello Vue!',
-        isOpen: false
+        isOpen: false,
+        currentIndex: 0,
+        menus: [
+          {title: '我的作品', desc: '小工具...'},
+          {title: '效果展示', desc: '效果展示...'},
+          {title: '我的作品', desc: '小工具...'},
+          {title: '我的作品', desc: '小工具...'},
+        ],
       },
       watch: {
         isOpen(bol) {
@@ -98,7 +122,8 @@
         this.createCanvas()
       },
       methods: {
-        open() {
+        open(index) {
+          this.currentIndex = index
           let pageWidth = document.documentElement.clientWidth
           if (pageWidth < 1100) {
             this.isOpen = true

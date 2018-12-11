@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html {
+      height: 100%;
+      background: black;
+    }
+
+    ul {
+      overflow: hidden;
+      position: relative;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      min-width: 800px;
+      max-width: 1600px;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 0;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      position: relative;
+      width: 12.5%;
+      height: 100%;
+      font: 1rem/3 trebuchet ms, verdana, century gothic, arial, sans-serif;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    li:nth-child(1) {
+      color: #ff6666;
+    }
+    li:nth-child(1):hover {
+      color: black;
+    }
+    li:nth-child(1):hover ~ li:last-child {
+      transform: translate(0%);
+      background: #ff8080;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(2) {
+      color: #ffd966;
+    }
+    li:nth-child(2):hover {
+      color: black;
+    }
+    li:nth-child(2):hover ~ li:last-child {
+      transform: translate(100%);
+      background: #ffdf80;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(3) {
+      color: #b3ff66;
+    }
+    li:nth-child(3):hover {
+      color: black;
+    }
+    li:nth-child(3):hover ~ li:last-child {
+      transform: translate(200%);
+      background: #bfff80;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(4) {
+      color: #66ff8c;
+    }
+    li:nth-child(4):hover {
+      color: black;
+    }
+    li:nth-child(4):hover ~ li:last-child {
+      transform: translate(300%);
+      background: #80ff9f;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(5) {
+      color: #66ffff;
+    }
+    li:nth-child(5):hover {
+      color: black;
+    }
+    li:nth-child(5):hover ~ li:last-child {
+      transform: translate(400%);
+      background: #80ffff;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(6) {
+      color: #668cff;
+    }
+    li:nth-child(6):hover {
+      color: black;
+    }
+    li:nth-child(6):hover ~ li:last-child {
+      transform: translate(500%);
+      background: #809fff;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(7) {
+      color: #b366ff;
+    }
+    li:nth-child(7):hover {
+      color: black;
+    }
+    li:nth-child(7):hover ~ li:last-child {
+      transform: translate(600%);
+      background: #bf80ff;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:nth-child(8) {
+      color: #ff66d9;
+    }
+    li:nth-child(8):hover {
+      color: black;
+    }
+    li:nth-child(8):hover ~ li:last-child {
+      transform: translate(700%);
+      background: #ff80df;
+      transition: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    li:last-child {
+      position: absolute;
+      z-index: -1;
+      left: 0%;
+      transform: translate(350%);
+      background: rgba(255, 255, 255, 0);
+      transition: background .35s ease-out, transform 0s .35s;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>news</li>
+    <li>products</li>
+    <li>services</li>
+    <li>gallery</li>
+    <li>about us</li>
+    <li>contact</li>
+    <li>jobs</li>
+    <li>blog</li>
+    <li></li>
+  </ul>
+</body>
+</html>
