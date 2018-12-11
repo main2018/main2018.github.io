@@ -169,7 +169,24 @@
         transform: rotate(360deg);
       }
     }
+    .swiper-container {
+      width: 300px;
+      height: 300px;
+      position: fixed!important;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px!important;
+      margin-top: -150px!important;
+      z-index: 999!important;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
   </style>
+  <link rel='stylesheet' href='../static/swiper.css'>
+  <script src='../static/swiper.js'></script>
 </head>
 <body>
   <div class="music" onclick="togglePlay()">
@@ -180,9 +197,21 @@
   <canvas id="canvas1"></canvas>
   <canvas id="canvas2"></canvas>
   <canvas id="canvas3"></canvas>
-  <audio src="http://www.ytmp3.cn/down/46254.mp3" autoplay controls loop>
-    <source src="http://www.ytmp3.cn/down/46254.mp3"/>
+  <!--<audio src="http://www.ytmp3.cn/down/46254.mp3" autoplay controls loop>-->
+  <audio src="../static/music.mp3" autoplay controls loop>
+    <source src="../static/music.mp3"/>
   </audio >
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div style="background-image:url(http://img.tukeshare.com/1535958725413?imageView2/2/w/200)" class="swiper-slide"></div>
+      <div style="background-image:url(http://img.tukeshare.com/1535793741507?imageView2/2/w/200)" class="swiper-slide"></div>
+      <div style="background-image:url(http://img.tukeshare.com/1538274214167?imageView2/2/w/200)" class="swiper-slide"></div>
+      <div style="background-image:url(http://img.tukeshare.com/1535971240554?imageView2/2/w/200)" class="swiper-slide"></div>
+      <div style="background-image:url(http://img.tukeshare.com/1538061682081?imageView2/2/w/200)" class="swiper-slide"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </body>
 </html>
 <script>
@@ -422,10 +451,30 @@
   function togglePlay() {
     const music = document.querySelector('.music')
     const audio = document.querySelector('audio')
-    console.log('audio', audio)
     music.classList.toggle('paused')
-    console.log(audio.paused)
-    audio.paused && audio.play()
-    !audio.paused && audio.pause()
+    const isPaused = audio.paused
+    if (isPaused) {
+      audio.play()
+    } else {
+      audio.pause()
+    }
   }
+</script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    // paginationType: 'fraction’', // bullets 圆点（默认） fraction’ 1/3 progress  进度条
+    effect: 'cube',
+    grabCursor: true,
+    loop: true, // 循环模式选项
+    initialSlide: 1, // 设定初始化时slide的索引。
+    autoplay: 5000,
+    speed: 1000, // 滑动速度，即slider自动滑动开始到结束的时间（单位ms），也是触摸滑动时释放至贴合的时间。
+    cube: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94
+    }
+  });
 </script>
