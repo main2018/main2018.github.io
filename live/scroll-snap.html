@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      scroll-snap-type: x mandatory;
+
+    }
+    ul li{
+      flex: 0 0 200px;
+      width: 200px;
+      height: 200px;
+      margin-right: 10px;
+      background-color: green;
+      scroll-snap-align: start;
+      /* scroll-snap-type: x/y
+      scroll-snap-align: start/end/center */
+    }
+    ol{
+      height: 500px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      scroll-snap-type: y mandatory;
+    }
+    ol li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: palevioletred;
+      scroll-snap-align: start;
+      /* scroll-snap-type: x/y
+      scroll-snap-align: start/end/center */
+    }
+  </style>
+</head>
+<body>
+  CSS Scroll Snap是CSS中一个独立的模块，可以让网页容器滚动停止的时候，自动平滑定位到指定元素的指定位置，包含scroll-*以及scroll-snap-*等诸多CSS属性。（scroll滚动吸附效果）
+  <br>
+  参考： https://www.zhangxinxu.com/wordpress/2018/11/know-css-scroll-snap/
+  
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ol>
+      <li>用scroll-snap</li>
+      <li>模拟一屏一屏滑来滑去的H5</li>
+      <li>模拟单屏滚动</li>
+      <li>一次滚动一屏</li>
+    </ul>
+</body>
+</html>
