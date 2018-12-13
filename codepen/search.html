@@ -7,159 +7,326 @@
   <title>Document</title>
   <style>
     #btn--yp {
-  box-sizing: content-box;
-  position: fixed;
-  z-index: 9;
-  bottom: 1em;
-  right: 1em;
-  border: solid 1em transparent;
-  width: 4.625em;
-  height: 3.25em;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/icon-yp.svg) 50%/cover content-box;
-  font: 16px/ 1.25 trebuchet ms, sans-serif;
-  text-indent: 200vw;
-  text-shadow: none;
-  filter: grayscale(1) drop-shadow(0 0 1px #e8e0e0);
-  transition: .5s;
-  white-space: nowrap;
-}
-#btn--yp:before {
-  box-sizing: inherit;
-  position: absolute;
-  left: 0;
-  bottom: 100%;
-  margin: 1em -.5em;
-  padding: .5em;
-  width: 100%;
-  border-radius: 5px;
-  background: #e8e0e0;
-  color: #000;
-  text-align: center;
-  text-decoration: none;
-  text-indent: 0vw;
-  white-space: normal;
-  animation: float 1s ease-in-out infinite alternate;
-  content: attr(data-txt);
-}
-#btn--yp:hover, #btn--yp:focus {
-  outline: none;
-  filter: grayscale(0) drop-shadow(0 0 1px crimson);
-}
+      box-sizing: content-box;
+      position: fixed;
+      z-index: 9;
+      bottom: 1em;
+      right: 1em;
+      border: solid 1em transparent;
+      width: 4.625em;
+      height: 3.25em;
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/icon-yp.svg) 50%/cover content-box;
+      font: 16px/ 1.25 trebuchet ms, sans-serif;
+      text-indent: 200vw;
+      text-shadow: none;
+      filter: grayscale(1) drop-shadow(0 0 1px #e8e0e0);
+      transition: .5s;
+      white-space: nowrap;
+    }
+    #btn--yp:before {
+      box-sizing: inherit;
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      margin: 1em -.5em;
+      padding: .5em;
+      width: 100%;
+      border-radius: 5px;
+      background: #e8e0e0;
+      color: #000;
+      text-align: center;
+      text-decoration: none;
+      text-indent: 0vw;
+      white-space: normal;
+      animation: float 1s ease-in-out infinite alternate;
+      content: attr(data-txt);
+    }
+    #btn--yp:hover, #btn--yp:focus {
+      outline: none;
+      filter: grayscale(0) drop-shadow(0 0 1px crimson);
+    }
 
-@keyframes float {
-  to {
-    transform: translateY(0.75em);
-  }
-}
-*, :before, :after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
+    @keyframes float {
+      to {
+        transform: translateY(0.75em);
+      }
+    }
+    *, :before, :after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font: inherit;
+    }
 
-html {
-  overflow-x: hidden;
-}
+    html {
+      overflow-x: hidden;
+    }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  min-width: 400px;
-  min-height: 100vh;
-  background: #252525;
-}
+    .search1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      min-width: 400px;
+      min-height: 50vh;
+      background: #252525;
+    }
 
-[id='search-btn'] {
-  position: absolute;
-  left: -100vw;
-}
-[id='search-btn'] ~ * {
-  --i: var(--pos, 1);
-  --j: calc(1 - var(--i))
-  ;
-}
-[id='search-btn']:checked ~ * {
-  --pos: 0 ;
-}
+    [id='search-btn'] {
+      position: absolute;
+      left: -100vw;
+    }
+    [id='search-btn'] ~ * {
+      --i: var(--pos, 1);
+      --j: calc(1 - var(--i))
+      ;
+    }
+    [id='search-btn']:checked ~ * {
+      --pos: 0 ;
+    }
 
-[for='search-btn'] {
-  order: 1;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-  margin-left: -1.25em;
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
-  transform: translate(var(--pos, -10em)) rotate(45deg);
-  background: hsl(calc(336 - var(--i)*269), calc(77% + var(--i)*2%), calc(49% + var(--i)*13%));
-  text-indent: -100vw;
-  transition: 0.65s ease-out;
-  cursor: pointer;
-}
-[for='search-btn']:before, [for='search-btn']:after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -0.8125em;
-  width: 1.625em;
-  height: 1.625em;
-  transition: inherit;
-  content: "";
-}
-[for='search-btn']:before {
-  margin-top: -0.08125em;
-  height: 0.203125em;
-  transform-origin: 100% 0;
-  transform: translate(var(--pos, 0.40625em)) scalex(calc(1 - var(--i)*.5));
-  background: currentcolor;
-}
-[for='search-btn']:after {
-  border: solid 0.203125em currentcolor;
-  border-radius: calc(var(--i)*50%);
-  transform: translate(var(--pos, -0.40625em)) scalex(calc(var(--j)*0.125 + var(--i)));
-  box-shadow: inset 0 0 0 calc(var(--j)*0.8125em) currentcolor;
-  transition-property: border-radius, transform, box-shadow;
-  transition-timing-function: cubic-bezier(calc(var(--j)*.42), 0, calc(1 - var(--i)*.42), 1), cubic-bezier(calc(var(--i)*.42), 0, calc(1 - var(--j)*.42), 1);
-}
+    [for='search-btn'] {
+      order: 1;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      margin-left: -1.25em;
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      transform: translate(var(--pos, -10em)) rotate(45deg);
+      background: hsl(calc(336 - var(--i)*269), calc(77% + var(--i)*2%), calc(49% + var(--i)*13%));
+      text-indent: -100vw;
+      transition: 0.65s ease-out;
+      cursor: pointer;
+    }
+    [for='search-btn']:before, [for='search-btn']:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -0.8125em;
+      width: 1.625em;
+      height: 1.625em;
+      transition: inherit;
+      content: "";
+    }
+    [for='search-btn']:before {
+      margin-top: -0.08125em;
+      height: 0.203125em;
+      transform-origin: 100% 0;
+      transform: translate(var(--pos, 0.40625em)) scalex(calc(1 - var(--i)*.5));
+      background: currentcolor;
+    }
+    [for='search-btn']:after {
+      border: solid 0.203125em currentcolor;
+      border-radius: calc(var(--i)*50%);
+      transform: translate(var(--pos, -0.40625em)) scalex(calc(var(--j)*0.125 + var(--i)));
+      box-shadow: inset 0 0 0 calc(var(--j)*0.8125em) currentcolor;
+      transition-property: border-radius, transform, box-shadow;
+      transition-timing-function: cubic-bezier(calc(var(--j)*.42), 0, calc(1 - var(--i)*.42), 1), cubic-bezier(calc(var(--i)*.42), 0, calc(1 - var(--j)*.42), 1);
+    }
 
-[id='search-bar'] {
-  margin-right: -1.25em;
-  border: none;
-  padding: 0 1em;
-  width: 20em;
-  height: 3.25em;
-  border-radius: 3.25em;
-  transform: translate(var(--pos, 10em));
-  background: #3f324d;
-  --cp: inset(-2em var(--pos, 100%) -2em -2em);
-  -webkit-clip-path: var(--cp);
-  clip-path: var(--cp);
-  color: #fff;
-  font: 1em century gothic, verdana, arial, sans-serif;
-  transition: 0.65s;
-}
-[id='search-bar']::placeholder {
-  opacity: .5;
-  color: inherit;
-  font-size: .875em;
-  letter-spacing: 1px;
-  text-shadow: 0 0 1px, 0 0 2px;
-}
-[id='search-bar']:focus {
-  outline: none;
-  box-shadow: 0 0 1.5em #ffeacc, 0 1.25em 1.5em rgba(0, 0, 0, 0.2);
-  background: #ffeacc;
-  color: #000;
-}
+    [id='search-bar'] {
+      margin-right: -1.25em;
+      border: none;
+      padding: 0 1em;
+      width: 20em;
+      height: 3.25em;
+      border-radius: 3.25em;
+      transform: translate(var(--pos, 10em));
+      background: #3f324d;
+      --cp: inset(-2em var(--pos, 100%) -2em -2em);
+      -webkit-clip-path: var(--cp);
+      clip-path: var(--cp);
+      color: #fff;
+      font: 1em century gothic, verdana, arial, sans-serif;
+      transition: 0.65s;
+    }
+    [id='search-bar']::placeholder {
+      opacity: .5;
+      color: inherit;
+      font-size: .875em;
+      letter-spacing: 1px;
+      text-shadow: 0 0 1px, 0 0 2px;
+    }
+    [id='search-bar']:focus {
+      outline: none;
+      box-shadow: 0 0 1.5em #ffeacc, 0 1.25em 1.5em rgba(0, 0, 0, 0.2);
+      background: #ffeacc;
+      color: #000;
+    }
+  </style>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Cabin:400);
+
+    .webdesigntuts-workshop {
+      position: relative;
+      min-height: 50vh;
+      background: #151515;
+      text-align: center;
+      width: 100%;
+    }
+
+    .webdesigntuts-workshop:before,
+    .webdesigntuts-workshop:after {
+      content: '';
+      display: block;	
+      height: 1px;
+      left: 50%;
+      margin: 0 0 0 -400px;
+      position: absolute;
+      width: 800px;
+    }
+
+    .webdesigntuts-workshop:before {
+      background: #444;
+      background: linear-gradient(left, #151515, #444, #151515);
+      top: 192px;
+    }
+
+    .webdesigntuts-workshop:after {
+      background: #000;
+      background: linear-gradient(left, #151515, #000, #151515);	
+      top: 191px;
+    }
+
+    .webdesigntuts-workshop form {
+      background: #111;
+      background: linear-gradient(#1b1b1b, #111);
+      border: 1px solid #000;
+      border-radius: 5px;
+      box-shadow: inset 0 0 0 1px #272727;
+      display: inline-block;
+      font-size: 0px;
+      margin: 150px auto 0;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .webdesigntuts-workshop input {
+      background: #222;	
+      background: linear-gradient(#333, #222);	
+      border: 1px solid #444;
+      border-radius: 5px 0 0 5px;
+      box-shadow: 0 2px 0 #000;
+      color: #888;
+      display: block;
+      float: left;
+      font-family: 'Cabin', helvetica, arial, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      height: 40px;
+      margin: 0;
+      padding: 0 10px;
+      text-shadow: 0 -1px 0 #000;
+      width: 200px;
+    }
+
+    .ie .webdesigntuts-workshop input {
+      line-height: 40px;
+    }
+
+    .webdesigntuts-workshop input::-webkit-input-placeholder {
+      color: #888;
+    }
+
+    .webdesigntuts-workshop input:-moz-placeholder {
+      color: #888;
+    }
+
+    .webdesigntuts-workshop input:focus {
+      -webkit-animation: glow 800ms ease-out infinite alternate;
+              animation: glow 800ms ease-out infinite alternate;
+      background: #222922;
+      background: linear-gradient(#333933, #222922);
+      border-color: #393;
+      box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+      color: #efe;
+      outline: none;
+    }
+
+    .webdesigntuts-workshop input:focus::-webkit-input-placeholder { 
+      color: #efe;
+    }
+
+    .webdesigntuts-workshop input:focus:-moz-placeholder {
+      color: #efe;
+    }
+
+    .webdesigntuts-workshop button {
+      background: #222;
+      background: linear-gradient(#333, #222);
+      box-sizing: border-box;
+      border: 1px solid #444;
+      border-left-color: #000;
+      border-radius: 0 5px 5px 0;
+      box-shadow: 0 2px 0 #000;
+      color: #fff;
+      display: block;
+      float: left;
+      font-family: 'Cabin', helvetica, arial, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      height: 40px;
+      line-height: 40px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      text-shadow: 0 -1px 0 #000;
+      width: 80px;
+    }	
+
+    .webdesigntuts-workshop button:hover,
+    .webdesigntuts-workshop button:focus {
+      background: #292929;
+      background: linear-gradient(#393939, #292929);
+      color: #5f5;
+      outline: none;
+    }
+
+    .webdesigntuts-workshop button:active {
+      background: #292929;
+      background: linear-gradient(#393939, #292929);
+      box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+      top: 1px;
+    }
+
+    @-webkit-keyframes glow {
+        0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+        }	
+        100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+        }
+    }
+
+    @keyframes glow {
+        0% {
+        border-color: #393;
+        box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+        }	
+        100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+        }
+    }
   </style>
 </head>
 <body>
-  <input id='search-btn' type='checkbox'/>
-  <label for='search-btn'>Show search bar</label>
-  <input id='search-bar' type='text' placeholder='Search...'/>
+  <div class="search1">
+      <input id='search-btn' type='checkbox'/>
+      <label for='search-btn'>Show search bar</label>
+      <input id='search-bar' type='text' placeholder='Search...'/>
+  </div>
+
+  <section class="webdesigntuts-workshop">
+    <form action="" method="">		    
+      <input type="search" placeholder="What are you looking for?">		    	
+      <button>Search</button>
+    </form>
+  </section>
 </body>
 </html>
