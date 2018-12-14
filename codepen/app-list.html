@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS only wishlist app concept</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  font-weight: 300;
+  overflow: hidden;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #eb4460 0%, #f77560 100%);
+  background-size: cover;
+}
+body .list {
+  width: 330px;
+  height: 510px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/body.png);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-size: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: auto;
+}
+body .list_inner {
+  padding: 31px 36px;
+  overflow: hidden;
+  position: relative;
+  padding: 31px 36px;
+  overflow: hidden;
+  position: relative;
+}
+body .list_inner__mask {
+  padding: 0px 10px;
+}
+body .list_inner__mask img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  top: 0;
+  z-index: 4;
+}
+body .list_inner__head {
+  position: absoulte;
+  width: 260px;
+}
+body .list_inner__head h1 {
+  color: white;
+  font-size: 11px;
+  margin: 30px 0px 0px 0px;
+  font-weight: 300;
+}
+body .list_inner__head h2 {
+  color: #8b8b8b;
+  font-weight: 100;
+  font-size: 9px;
+  margin: 0 0 30px 0px;
+}
+body .list_inner__head img {
+  position: relative;
+  z-index: 14;
+  width: 100%;
+}
+body .list_inner input[type="checkbox"] {
+  display: none;
+}
+body .list_inner input[type="checkbox"]:checked + label .game_bg {
+  z-index: 10;
+  opacity: 1;
+  top: 40px;
+  transition: all .7s .35s;
+  pointer-events: auto;
+}
+body .list_inner input[type="checkbox"]:checked + label .game .game_pulse__point {
+  width: 600px;
+  height: 600px;
+  left: -130px;
+  transition: all .3s;
+  opacity: 0;
+}
+body .list_inner input[type="checkbox"]:not(checked) + label .game .game_right {
+  transition: all 0.8s 0.4s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner input[type="checkbox"]:checked + label .game .game_right {
+  position: absolute;
+  transition: all 0.8s 0.3s cubic-bezier(1, 0, 0.255, 1);
+  left: 37px;
+  top: 76px;
+}
+body .list_inner input[type="checkbox"]:checked + label .game_cta {
+  pointer-events: none;
+}
+body .list_inner input[type="checkbox"]:checked + label .game_cta img {
+  top: 0px;
+  opacity: 1;
+  transition: all 1s 0.35s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner input[type="checkbox"]:checked + label .game_info .span-one {
+  top: 0px;
+  opacity: 1;
+  transition: all 1s 0.25s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner input[type="checkbox"]:checked + label .game_info .span-two {
+  top: 0px;
+  opacity: 1;
+  transition: all 1s 0.3s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner input[type="checkbox"]:checked + label .game .game_left {
+  width: 310px;
+  left: 10px;
+  top: 6px;
+  transition: all 0.8s 0.2s cubic-bezier(1, 0, 0.255, 1);
+  margin: 0;
+  padding: 0px;
+  height: 200px;
+}
+body .list_inner input[type="checkbox"]:checked + label .game .game_left__image {
+  height: 100%;
+  opacity: 0.4;
+}
+body .list_inner__content {
+  overflow: hidden;
+  height: 400px;
+  padding-top: 60px;
+}
+body .list_inner label:nth-of-type(1) .game_left {
+  top: 140px;
+}
+body .list_inner label:nth-of-type(1) .game_right {
+  top: 140px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(1) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 135px;
+}
+body .list_inner label:nth-of-type(2) .game_left {
+  top: 205px;
+}
+body .list_inner label:nth-of-type(2) .game_right {
+  top: 205px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(2) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 201px;
+}
+body .list_inner label:nth-of-type(3) .game_left {
+  top: 270px;
+}
+body .list_inner label:nth-of-type(3) .game_right {
+  top: 270px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(3) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 267px;
+}
+body .list_inner label:nth-of-type(4) .game_left {
+  top: 335px;
+}
+body .list_inner label:nth-of-type(4) .game_right {
+  top: 335px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(4) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 333px;
+}
+body .list_inner label:nth-of-type(5) .game_left {
+  top: 400px;
+}
+body .list_inner label:nth-of-type(5) .game_right {
+  top: 400px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(5) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 399px;
+}
+body .list_inner label:nth-of-type(6) .game_left {
+  top: 465px;
+}
+body .list_inner label:nth-of-type(6) .game_right {
+  top: 465px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(6) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 465px;
+}
+body .list_inner label:nth-of-type(7) .game_left {
+  top: 530px;
+}
+body .list_inner label:nth-of-type(7) .game_right {
+  top: 530px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(7) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 531px;
+}
+body .list_inner label:nth-of-type(8) .game_left {
+  top: 595px;
+}
+body .list_inner label:nth-of-type(8) .game_right {
+  top: 595px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(8) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 597px;
+}
+body .list_inner label:nth-of-type(9) .game_left {
+  top: 660px;
+}
+body .list_inner label:nth-of-type(9) .game_right {
+  top: 660px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(9) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 663px;
+}
+body .list_inner label:nth-of-type(10) .game_left {
+  top: 725px;
+}
+body .list_inner label:nth-of-type(10) .game_right {
+  top: 725px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(10) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 729px;
+}
+body .list_inner label:nth-of-type(11) .game_left {
+  top: 790px;
+}
+body .list_inner label:nth-of-type(11) .game_right {
+  top: 790px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(11) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 795px;
+}
+body .list_inner label:nth-of-type(12) .game_left {
+  top: 855px;
+}
+body .list_inner label:nth-of-type(12) .game_right {
+  top: 855px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(12) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 861px;
+}
+body .list_inner label:nth-of-type(13) .game_left {
+  top: 920px;
+}
+body .list_inner label:nth-of-type(13) .game_right {
+  top: 920px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(13) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 927px;
+}
+body .list_inner label:nth-of-type(14) .game_left {
+  top: 985px;
+}
+body .list_inner label:nth-of-type(14) .game_right {
+  top: 985px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(14) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 993px;
+}
+body .list_inner label:nth-of-type(15) .game_left {
+  top: 1050px;
+}
+body .list_inner label:nth-of-type(15) .game_right {
+  top: 1050px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(15) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 1059px;
+}
+body .list_inner label:nth-of-type(16) .game_left {
+  top: 1115px;
+}
+body .list_inner label:nth-of-type(16) .game_right {
+  top: 1115px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(16) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 1125px;
+}
+body .list_inner label:nth-of-type(17) .game_left {
+  top: 1180px;
+}
+body .list_inner label:nth-of-type(17) .game_right {
+  top: 1180px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(17) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 1191px;
+}
+body .list_inner label:nth-of-type(18) .game_left {
+  top: 1245px;
+}
+body .list_inner label:nth-of-type(18) .game_right {
+  top: 1245px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(18) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 1257px;
+}
+body .list_inner label:nth-of-type(19) .game_left {
+  top: 1310px;
+}
+body .list_inner label:nth-of-type(19) .game_right {
+  top: 1310px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(19) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 1323px;
+}
+body .list_inner label:nth-of-type(20) .game_left {
+  top: 1375px;
+}
+body .list_inner label:nth-of-type(20) .game_right {
+  top: 1375px;
+  left: 170px;
+  transition: all .2s .2s;
+}
+body .list_inner label:nth-of-type(20) .game_pulse {
+  position: absolute;
+  overflow: hidden;
+  top: 281px;
+  opacity: 0.5;
+  width: 310px;
+  height: 66px;
+  left: 10px;
+  top: 1389px;
+}
+body .list_inner .game {
+  width: 100%;
+  clear: both;
+  margin-bottom: 20px;
+  height: 54px;
+}
+body .list_inner .game_bg {
+  position: absolute;
+  left: 10px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.8s 0.5s cubic-bezier(1, 0, 0.255, 1);
+  right: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, black 34%);
+  width: 310px;
+  top: 400px;
+  height: 457px;
+}
+body .list_inner .game_cta {
+  position: absolute;
+  z-index: 10;
+  top: 390px;
+}
+body .list_inner .game_cta img {
+  width: 200px;
+  opacity: 0;
+  position: relative;
+  top: 150px;
+  left: -12px;
+  transition: all 1s 0s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner .game_info {
+  position: absolute;
+  top: 194px;
+  z-index: 10;
+  width: 258px;
+  pointer-events: none;
+}
+body .list_inner .game_info .span-one, body .list_inner .game_info .span-two {
+  opacity: 0;
+  top: 140px;
+  position: relative;
+}
+body .list_inner .game_info .span-one {
+  transition: all 1s 0.1s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner .game_info .span-two {
+  transition: all 1s 0.05s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner .game_info p {
+  color: white;
+  font-size: 7px;
+  line-height: 13px;
+  clear: left;
+}
+body .list_inner .game_info hr {
+  width: 10px;
+  height: 1px;
+  float: left;
+  border: none;
+  margin: 5px 0px 5px 0px;
+  background: white;
+}
+body .list_inner .game_info h2 {
+  color: white;
+  font-weight: 100;
+  font-size: 12px;
+  margin: 0;
+}
+body .list_inner .game_left {
+  float: left;
+  position: absolute;
+  margin-left: 10px;
+  width: 120px;
+  transition: all 0.8s 0.4s cubic-bezier(1, 0, 0.255, 1);
+  height: 58px;
+  left: 25px;
+  border-radius: 2px;
+  top: 140px;
+  background: black;
+}
+body .list_inner .game_left__image {
+  width: 100%;
+  transition: opacity .3s .2s;
+  opacity: 1;
+  border-radius: 2px;
+  height: 100%;
+  background-size: cover !important;
+}
+body .list_inner .game_pulse__point {
+  width: 0px;
+  height: 0px;
+  background: #4d8ec5;
+  z-index: 10;
+  transition: all 0s;
+  left: 0;
+  border-radius: 1400px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+body .list_inner .game_right {
+  float: right;
+  width: 50%;
+  position: absolute;
+  transition: all 0.8s 4s cubic-bezier(1, 0, 0.255, 1);
+}
+body .list_inner .game_right__rating {
+  clear: left;
+}
+body .list_inner .game_right h3 {
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  margin: 0;
+}
+body .list_inner .game_right .date {
+  margin-left: 14px;
+}
+body .list_inner .game_right .genre {
+  clear: left;
+}
+body .list_inner .game_right .star {
+  position: relative;
+  top: -20px;
+  margin-right: 0px;
+  width: 10px;
+  height: 10px;
+  float: left;
+}
+body .list_inner .game_right span {
+  float: left;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+body .list_inner .game_right span i {
+  color: white;
+  float: left;
+  font-size: 8px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+body .list_inner .game_right span p {
+  float: left;
+}
+body .list_inner .game_right hr {
+  width: 10px;
+  height: 1px;
+  float: left;
+  border: none;
+  margin: 5px 0px 5px 0px;
+  background: white;
+}
+body .list_inner .game_right p {
+  color: white;
+  margin: 0;
+  font-size: 9px;
+}
+body .list_inner .game_right .old {
+  position: relative;
+  top: 9px;
+  margin: 0px 5px 0px 5px;
+}
+body .list_inner .game_right .old p {
+  text-decoration: line-through;
+  font-size: 8px;
+  opacity: 0.4;
+}
+body .list_inner .game_right .new {
+  position: relative;
+  top: 8px;
+}
+body .list_inner .game_right .new p {
+  color: #86c02a;
+  font-size: 8px;
+}
+
+body .list_inner .game_right .star_no {
+  border-bottom: 70px  solid #464348 !important;
+  color: #464348 !important;
+}
+body .list_inner .game_right .star_no:before {
+  border-bottom: 80px solid #464348 !important;
+}
+body .list_inner .game_right .star_no:after {
+  border-bottom: 70px solid #464348 !important;
+}
+
+body .list_inner .game_right .star_icon, body .list_inner .game_right .star_no {
+  margin: 0px 0;
+  float: left;
+  position: absolute;
+  left: -97px;
+  display: block;
+  color: #ffd800;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px  solid #ffd800;
+  border-left: 100px solid transparent;
+  -moz-transform: rotate(35deg) scale(0.045);
+  -webkit-transform: rotate(35deg) scale(0.045);
+  -ms-transform: rotate(35deg) scale(0.045);
+  -o-transform: rotate(35deg) scale(0.045);
+}
+body .list_inner .game_right .star_icon:before, body .list_inner .game_right .star_no:before {
+  border-bottom: 80px solid #ffd800;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -45px;
+  left: -65px;
+  display: block;
+  content: '';
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
+body .list_inner .game_right .star_icon:after, body .list_inner .game_right .star_no:after {
+  position: absolute;
+  display: block;
+  color: #ffd800;
+  top: 3px;
+  left: -105px;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid #ffd800;
+  border-left: 100px solid transparent;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+  content: '';
+}
+
+  </style>
+</head>
+<body>
+    <div class='list'>
+        <div class='list_inner'>
+          <div class='list_inner__head'>
+            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/head.png'>
+            <h1>Your wishlist</h1>
+            <h2>5 items</h2>
+          </div>
+          <div class='list_inner__content'>
+            <input id='bioshock' name='game' type='checkbox'>
+            <label for='bioshock'>
+              <div class='game'>
+                <div class='game_bg'></div>
+                <div class='game_left'>
+                  <div class='game_left__image' style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/bio.jpg')"></div>
+                </div>
+                <div class='game_right'>
+                  <h3>Bioshock Infinite</h3>
+                  <hr>
+                  <span class='genre'>
+                    <i class='fa fa-user'></i>
+                    <p>Shooter / action</p>
+                  </span>
+                  <span class='date'>
+                    <i class='fa fa-calendar'></i>
+                    <p>2013</p>
+                  </span>
+                  <div class='game_right__rating'>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                  </div>
+                  <span class='old'>
+                    <i class='fa fa-tag'></i>
+                    <p>&pound;24.99</p>
+                  </span>
+                  <span class='new'>
+                    <p>&pound;14.99</p>
+                  </span>
+                </div>
+                <div class='game_pulse'>
+                  <div class='game_pulse__point'></div>
+                </div>
+                <div class='game_info'>
+                  <div class='span-one'>
+                    <h2>About this game</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties” story, then defend it against a zombie invasion in “Lara’s Nightmare”. Survive extreme conditions with a friend in the new online Co-Op Endurance mode, and brave the new “Extreme Survivor” difficulty. Also features an outfit and weapon inspired by Tomb Raider III, and 5 classic Lara skins. Existing DLC will challenge you to explore a new tomb that houses an ancient terror in Baba Yaga: The Temple of the Witch, and combat waves of infected predators in Cold Darkness Awakened.</p>
+                  </div>
+                  <div class='span-two'>
+                    <h2>Features</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties”.</p>
+                  </div>
+                </div>
+                <div class='game_cta'>
+                  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cta.png'>
+                </div>
+              </div>
+            </label>
+            <input id='justcause' name='game' type='checkbox'>
+            <label for='justcause'>
+              <div class='game'>
+                <div class='game_bg'></div>
+                <div class='game_left'>
+                  <div class='game_left__image' style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/jc3_image.png')"></div>
+                </div>
+                <div class='game_right'>
+                  <h3>Just Cause 3</h3>
+                  <hr>
+                  <span class='genre'>
+                    <i class='fa fa-user'></i>
+                    <p>Sandbox / action</p>
+                  </span>
+                  <span class='date'>
+                    <i class='fa fa-calendar'></i>
+                    <p>2016</p>
+                  </span>
+                  <div class='game_right__rating'>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                  </div>
+                  <span class='old'>
+                    <i class='fa fa-tag'></i>
+                    <p>&pound;32.99</p>
+                  </span>
+                  <span class='new'>
+                    <p>&pound;26.99</p>
+                  </span>
+                </div>
+                <div class='game_pulse'>
+                  <div class='game_pulse__point'></div>
+                </div>
+                <div class='game_info'>
+                  <div class='span-one'>
+                    <h2>About this game</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties” story, then defend it against a zombie invasion in “Lara’s Nightmare”. Survive extreme conditions with a friend in the new online Co-Op Endurance mode, and brave the new “Extreme Survivor” difficulty. Also features an outfit and weapon inspired by Tomb Raider III, and 5 classic Lara skins. Existing DLC will challenge you to explore a new tomb that houses an ancient terror in Baba Yaga: The Temple of the Witch, and combat waves of infected predators in Cold Darkness Awakened.</p>
+                  </div>
+                  <div class='span-two'>
+                    <h2>Features</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties”.</p>
+                  </div>
+                </div>
+                <div class='game_cta'>
+                  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cta.png'>
+                </div>
+              </div>
+            </label>
+            <input id='tombraider' name='game' type='checkbox'>
+            <label for='tombraider'>
+              <div class='game'>
+                <div class='game_bg'></div>
+                <div class='game_left'>
+                  <div class='game_left__image' style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tomb_raider_image.jpg')"></div>
+                </div>
+                <div class='game_right'>
+                  <h3>Tomb Raider</h3>
+                  <hr>
+                  <span class='genre'>
+                    <i class='fa fa-user'></i>
+                    <p>Puzzle / action</p>
+                  </span>
+                  <span class='date'>
+                    <i class='fa fa-calendar'></i>
+                    <p>2016</p>
+                  </span>
+                  <div class='game_right__rating'>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                  </div>
+                  <span class='old'>
+                    <i class='fa fa-tag'></i>
+                    <p>&pound;44.99</p>
+                  </span>
+                  <span class='new'>
+                    <p>&pound;34.99</p>
+                  </span>
+                </div>
+                <div class='game_pulse'>
+                  <div class='game_pulse__point'></div>
+                </div>
+                <div class='game_info'>
+                  <div class='span-one'>
+                    <h2>About this game</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties” story, then defend it against a zombie invasion in “Lara’s Nightmare”. Survive extreme conditions with a friend in the new online Co-Op Endurance mode, and brave the new “Extreme Survivor” difficulty. Also features an outfit and weapon inspired by Tomb Raider III, and 5 classic Lara skins. Existing DLC will challenge you to explore a new tomb that houses an ancient terror in Baba Yaga: The Temple of the Witch, and combat waves of infected predators in Cold Darkness Awakened.</p>
+                  </div>
+                  <div class='span-two'>
+                    <h2>Features</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties”.</p>
+                  </div>
+                </div>
+                <div class='game_cta'>
+                  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cta.png'>
+                </div>
+              </div>
+            </label>
+            <input id='orcs' name='game' type='checkbox'>
+            <label for='orcs'>
+              <div class='game'>
+                <div class='game_bg'></div>
+                <div class='game_left'>
+                  <div class='game_left__image' style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/omd_image.jpg')"></div>
+                </div>
+                <div class='game_right'>
+                  <h3>Orcs Must Die 2</h3>
+                  <hr>
+                  <span class='genre'>
+                    <i class='fa fa-user'></i>
+                    <p>Strategy</p>
+                  </span>
+                  <span class='date'>
+                    <i class='fa fa-calendar'></i>
+                    <p>2012</p>
+                  </span>
+                  <div class='game_right__rating'>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                  </div>
+                  <span class='old'>
+                    <i class='fa fa-tag'></i>
+                    <p>&pound;9.99</p>
+                  </span>
+                  <span class='new'>
+                    <p>&pound;4.99</p>
+                  </span>
+                </div>
+                <div class='game_pulse'>
+                  <div class='game_pulse__point'></div>
+                </div>
+                <div class='game_info'>
+                  <div class='span-one'>
+                    <h2>About this game</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties” story, then defend it against a zombie invasion in “Lara’s Nightmare”. Survive extreme conditions with a friend in the new online Co-Op Endurance mode, and brave the new “Extreme Survivor” difficulty. Also features an outfit and weapon inspired by Tomb Raider III, and 5 classic Lara skins. Existing DLC will challenge you to explore a new tomb that houses an ancient terror in Baba Yaga: The Temple of the Witch, and combat waves of infected predators in Cold Darkness Awakened.</p>
+                  </div>
+                  <div class='span-two'>
+                    <h2>Features</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties”.</p>
+                  </div>
+                </div>
+                <div class='game_cta'>
+                  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cta.png'>
+                </div>
+              </div>
+            </label>
+            <input id='deus' name='game' type='checkbox'>
+            <label for='deus'>
+              <div class='game'>
+                <div class='game_bg'></div>
+                <div class='game_left'>
+                  <div class='game_left__image' style="background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/deusex_image.png')"></div>
+                </div>
+                <div class='game_right'>
+                  <h3>Deus Ex 4</h3>
+                  <hr>
+                  <span class='genre'>
+                    <i class='fa fa-user'></i>
+                    <p>Shooter / Sci-Fi</p>
+                  </span>
+                  <span class='date'>
+                    <i class='fa fa-calendar'></i>
+                    <p>2016</p>
+                  </span>
+                  <div class='game_right__rating'>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                    <div class='star'>
+                      <div class='star_icon'></div>
+                    </div>
+                  </div>
+                  <span class='old'>
+                    <i class='fa fa-tag'></i>
+                    <p>&pound;39.99</p>
+                  </span>
+                  <span class='new'>
+                    <p>&pound;34.99</p>
+                  </span>
+                </div>
+                <div class='game_pulse'>
+                  <div class='game_pulse__point'></div>
+                </div>
+                <div class='game_info'>
+                  <div class='span-one'>
+                    <h2>About this game</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties” story, then defend it against a zombie invasion in “Lara’s Nightmare”. Survive extreme conditions with a friend in the new online Co-Op Endurance mode, and brave the new “Extreme Survivor” difficulty. Also features an outfit and weapon inspired by Tomb Raider III, and 5 classic Lara skins. Existing DLC will challenge you to explore a new tomb that houses an ancient terror in Baba Yaga: The Temple of the Witch, and combat waves of infected predators in Cold Darkness Awakened.</p>
+                  </div>
+                  <div class='span-two'>
+                    <h2>Features</h2>
+                    <hr>
+                    <p>Rise of the Tomb Raider: 20 Year Celebration includes the base game and Season Pass featuring all-new content. Explore Croft Manor in the new “Blood Ties”.</p>
+                  </div>
+                </div>
+                <div class='game_cta'>
+                  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cta.png'>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
