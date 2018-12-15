@@ -75,7 +75,7 @@ header .neon-hex{
 }
 
 .head-main{
-  
+
   position: absolute;
   top: 0;
   bottom: 0;
@@ -120,7 +120,36 @@ header .user-img img {
   max-width: 400px;
   width: 80%;
   border-radius: 150px;
-  border: 10px solid rgba(255, 254, 116, 0.76);
+  /* border: 10px solid rgba(255, 254, 116, 0.76); */
+  border: 10px solid transparent;
+  background: linear-gradient(70deg, #0ebeff, #ffdd40, #ae63e4, #47cf73, #0ebeff, #ffdd40, #ae63e4, #47cf73);
+  background-size: 200% 200%;
+  background-blend-mode: hard-light;
+  transition: background-color .3s linear;
+  /* animation: hue-rotate 3s linear infinite; */
+  animation:rainbow-border 1.5s linear infinite;
+
+}
+header .user-img img:hover{
+  background-color:#111
+}
+@keyframes rainbow-border{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:200% 50%}}
+
+
+@keyframes hue-rotate {
+  0% {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
 }
 
 @media only screen and (min-width: 600px) {
