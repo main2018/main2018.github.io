@@ -231,6 +231,9 @@ body {
           transform: skewY(-40deg);
   box-shadow: -32px -16px 10px 0 rgba(0,0,0,0.4), -4px 0 4px 0 rgba(0,0,0,0.4);
 }
+.phone-button:active{
+  left: 6px;
+}
 .phone-button.bottom {
   top: 160px;
 }
@@ -242,6 +245,10 @@ body {
   border-radius: 10px 10px 10px 3px;
   box-shadow: inset 2px 0 0 -1px rgba(255,255,255,0.25);
 }
+.phone-button.top:active{
+  left: 4px;
+}
+
 .phone-button.top:after {
   height: 27px;
   width: 8px;
@@ -593,6 +600,20 @@ body {
   -webkit-transform: skewY(-15deg);
           transform: skewY(-15deg);
 }
+.display-content:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, black, black);
+  display: none;
+}
+.display-content.lock:after {
+  display: block;
+}
 
 .notifications-bar{
   position: relative;
@@ -687,6 +708,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.bottom-icons > div:not(.eye):active, .bottom-icons .eye>div:active{
+  transform: scale(0.9)
 }
 .bottom-icons .equalizer div {
   height: 18px;
@@ -797,92 +821,105 @@ body {
   <!-- Pure CSS image (no graphics included) -->
 
 
-<div class="background-panels">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="phone">
-  <div class="phone-back">
-    <div class="phone-left-side">
-      <div class="phone-antena"></div>
-      <div class="phone-button top"></div>
-      <div class="phone-button"></div>
-      <div class="phone-button bottom"></div>
-      <div class="phone-antena bottom"></div>
-    </div>
-    <div class="phone-bottom">
-      <div class="phone-antena"></div>
-      <div class="bottom-speaker">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div class="phone-screw">
-        <div></div>
-      </div>
-      <div class="phone-charger">
-      </div>
-      <div class="phone-screw right">
-        <div></div>
-      </div>
-       <div class="bottom-speaker right">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div class="phone-antena right"></div>
-    </div>
+<div id="app">
+  <div class="background-panels">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  <div class="phone-screen"></div>
-  <div class="phone-display">
-    <div class="phone-notch">
-      <div class="phone-speaker"></div>
-    </div>
-    <div class="display-content">
-      <div class="notifications-bar">
-        <div class="time">9:41</div>
-        <div class="range"></div>
-        <div class="wifi"></div>
-        <div class="battery"></div>
+  <div class="phone">
+    <div class="phone-back">
+      <div class="phone-left-side">
+        <div class="phone-antena"></div>
+        <div class="phone-button top" @click="lock"></div>
+        <div class="phone-button"></div>
+        <div class="phone-button bottom"></div>
+        <div class="phone-antena bottom"></div>
       </div>
-      <div class="bottom-icons">
-        <div class="chart" onclick="back()"><div></div></div>
-        <div class="eye"><div></div></div>
-        <div class="equalizer"><div></div><div></div><div></div></div>
+      <div class="phone-bottom">
+        <div class="phone-antena"></div>
+        <div class="bottom-speaker">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="phone-screw">
+          <div></div>
+        </div>
+        <div class="phone-charger">
+        </div>
+        <div class="phone-screw right">
+          <div></div>
+        </div>
+         <div class="bottom-speaker right">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="phone-antena right"></div>
       </div>
-      <!-- <div class="home-button"></div> -->
-      <iframe src="https://main2018.github.io" scrolling="auto" id="frame_1" seamless border=0  frameBorder=0 marginHeight=0   marginWidth=0 noResize vspale="0"></iframe>
     </div>
-  </div>
-  <div class="phone-reflections">
-    <div class="reflection-1"></div>
-    <div class="reflection-2"></div>
-    <div class="reflection-3"></div>
-    <div class="reflection-4"></div>
-    <div class="reflection-5"></div>
-    <div class="reflection-6"></div>
-    <div class="reflection-7"></div>
+    <div class="phone-screen"></div>
+    <div class="phone-display">
+      <div class="phone-notch">
+        <div class="phone-speaker"></div>
+      </div>
+      <div class="display-content" :class="{lock: isLock}">
+        <div class="notifications-bar">
+          <div class="time">9:41</div>
+          <div class="range"></div>
+          <div class="wifi"></div>
+          <div class="battery"></div>
+        </div>
+        <div class="bottom-icons">
+          <div class="chart" onclick="back()"><div></div></div>
+          <div class="eye"><div></div></div>
+          <div class="equalizer"><div></div><div></div><div></div></div>
+        </div>
+        <!-- <div class="home-button"></div> -->
+        <iframe src="https://main2018.github.io" scrolling="auto" id="frame_1" seamless border=0  frameBorder=0 marginHeight=0   marginWidth=0 noResize vspale="0"></iframe>
+      </div>
+    </div>
+    <div class="phone-reflections">
+      <div class="reflection-1"></div>
+      <div class="reflection-2"></div>
+      <div class="reflection-3"></div>
+      <div class="reflection-4"></div>
+      <div class="reflection-5"></div>
+      <div class="reflection-6"></div>
+      <div class="reflection-7"></div>
+    </div>
   </div>
 </div>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
   function back() {
-    console.log('1111111111111')
     history.back()
   }
+  var app = new Vue({
+    el: '#app',
+    data: {
+      isLock: false,
+    },
+    methods: {
+      lock() {
+        this.isLock = !this.isLock
+      },
+    },
+  })
 
 </script>
