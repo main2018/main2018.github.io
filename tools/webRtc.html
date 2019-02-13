@@ -5,7 +5,7 @@
 <body>
 <video id="video" width="640" autoplay=""></video>
 <button id="snap" class="sexyButton">生成截图</button>
-<button id="save" onclick="save()">保存图片</button>
+<button id="save">保存图片</button>
 <canvas id="canvas" width="640"></canvas>
 <script>
 
@@ -57,7 +57,8 @@
       context.drawImage(video, 0, 0, 640, h);
     });
 
-    function save() {
+    const saveBtn = document.querySelector('#save')
+    saveBtn.onclick = function () {
       // var urlObject = window.URL || window.webkitURL || window;
       // var export_blob = new Blob([data]);
       var a = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
