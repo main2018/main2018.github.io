@@ -383,6 +383,7 @@ html, body {
 <script>
   if (!IsPC()) {
     alert('请使用电脑访问 ❤️')
+    document.write('手机不兼容，请使用电脑访问 ❤️')
     if (window.WeixinJSBridge) {
       window.WeixinJSBridge.call('closeWindow')
     } else {
