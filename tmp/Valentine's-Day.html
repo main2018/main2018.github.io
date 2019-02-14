@@ -383,8 +383,11 @@ html, body {
 <script>
   if (!IsPC()) {
     alert('请使用电脑访问 ❤️')
-    window.WeixinJSBridge.call('closeWindow')
-    window.close()
+    if (window.WeixinJSBridge) {
+      window.WeixinJSBridge.call('closeWindow')
+    } else {
+      window.close()
+    }
   }
 
   var nameText = prompt('你的爱人邀你填写你的名字：', '')
