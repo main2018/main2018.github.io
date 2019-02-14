@@ -388,10 +388,12 @@ html, body {
     } else {
       window.close()
     }
+  } else {
+    var nameText = prompt('你的爱人邀你填写你的名字：', '')
+    document.querySelector('#name').innerText = nameText || '我的爱人'
   }
 
-  var nameText = prompt('你的爱人邀你填写你的名字：', '')
-  document.querySelector('#name').innerText = nameText || '我的爱人'
+  
 
   var $body = $('body');
 var $heart = $('#heart-svg');
