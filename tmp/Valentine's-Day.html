@@ -203,6 +203,8 @@ html, body {
     display: block;
   }
   </style>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+
 </head>
 <body>
 <iframe src="./Many-Hearts.html" frameborder="0" width="100%" height="100%"></iframe>
@@ -377,13 +379,12 @@ html, body {
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.1/mo.js'></script>
-<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script src='./SplitText.min.js'></script>
 <script>
   if (!IsPC()) {
     alert('请使用电脑访问 ❤️')
-    window.close()
     window.WeixinJSBridge.call('closeWindow')
+    window.close()
   }
 
   var nameText = prompt('你的爱人邀你填写你的名字：', '')
