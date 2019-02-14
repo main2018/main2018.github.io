@@ -386,7 +386,8 @@ html, body {
     if (window.WeixinJSBridge) {
       window.WeixinJSBridge.call('closeWindow')
     } else {
-      window.close()
+      window.location.href="about:blank";
+      window.close();
     }
   } else {
     var nameText = prompt('你的爱人邀你填写你的名字：', '')
