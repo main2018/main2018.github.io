@@ -1,4 +1,4 @@
-export default {
+const DISTRICTS = {
   100000: {
     110000: '北京市',
     120000: '天津市',
@@ -4544,3 +4544,5 @@ export default {
     820108: '圣方济各堂区',
   },
 }
+
+export default DISTRICTS
