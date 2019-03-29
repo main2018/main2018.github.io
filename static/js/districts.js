@@ -1,4 +1,4 @@
-const DISTRICTS = {
+var DISTRICTS = {
   100000: {
     110000: '北京市',
     120000: '天津市',
@@ -4545,4 +4545,4 @@ const DISTRICTS = {
   },
 }
 
-export default DISTRICTS
+// export default DISTRICTS
