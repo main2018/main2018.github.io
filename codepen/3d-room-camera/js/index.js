@@ -512,7 +512,7 @@ function onWindowResize() {
 
 function onDocumentMouseDown( event ) {
 	å.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	å.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;	
+	å.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 	// find intersections
 	var vector = new THREE.Vector3( å.mouse.x, å.mouse.y, 1 );
 		vector.unproject( camera );
