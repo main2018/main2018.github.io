@@ -27,11 +27,14 @@
 </body>
 </html>
 <script type="text/template" id="demo1">
-  <h2>标签模版333</h2>
+  <svg class="download" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 14 17">
+    <path class="arrow" fill="#fff" fill-rule="evenodd" d="M14 6h-4V0H4v6H0l7 7 7-7z"></path>
+    <path class="line" fill="#fff" fill-rule="evenodd" d="M0 15v2h14v-2H0z"></path>
+  </svg>
 </script>
-<script type="x-template" id="demo3">
+<!-- <script type="x-template" id="demo3">
     <h2 style="color:red">我是script标签模板</h2>
-</script>
+</script> -->
 <script>
   
   Vue.component('download', {
@@ -48,7 +51,7 @@
       }
     },
     mounted() {
-      renderHTMLtoPDF()
+      // renderHTMLtoPDF()
     },
     methods: {
       download() {

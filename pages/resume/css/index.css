@@ -1,0 +1,23 @@
+.download{
+  position: fixed;
+  right: 10px;
+  bottom: 20%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  overflow: visible;
+}
+.download path{
+  fill: #357ebd;
+}
+.download:hover .arrow {
+  animation: bounce 1s both ease-out 1;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0) }
+  25% { transform: translateY(-3px) }
+  50% { transform: translateY(0) }
+  75% { transform: translateY(-3px) }
+  100% { transform: translateY(0) }
+}
