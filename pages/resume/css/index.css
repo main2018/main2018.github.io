@@ -1,17 +1,50 @@
-.download{
+.tools{
+  --color: rgb(247, 146, 146);
+  --color-active: #357ebd;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
-  right: 10px;
+  right: 20px;
   bottom: 20%;
+  
+}
+.tools>*{
+  margin-bottom: 20px;
   cursor: pointer;
+}
+.download{
   height: 30px;
   width: 30px;
   overflow: visible;
 }
 .download path{
-  fill: #357ebd;
+  fill: var(--color);
 }
 .download:hover .arrow {
   animation: bounce 1s both ease-out 1;
+}
+
+.backtop{
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-color: var(--color);
+  font-style: normal;
+  transform: rotate(-45deg);
+  overflow: hidden;
+}
+
+.download:hover path{
+  fill: var(--color-active);
+}
+.backtop:hover{
+  border-color: var(--color-active);
+  animation: bounce-backtop 1s both ease-out 1;
 }
 
 @keyframes bounce {
@@ -20,4 +53,9 @@
   50% { transform: translateY(0) }
   75% { transform: translateY(-3px) }
   100% { transform: translateY(0) }
+}
+@keyframes slider {
+  to {
+    left: 200%
+  }
 }

@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="browsermode" content="application"> <!-- UC浏览器应用模式 -->
+  <meta name="full-screen" content="yes"> <!-- UC 强制全屏 -->
+  <meta name="x5-fullscreen" content="true"> <!-- QQ 强制全屏 -->
+  <meta name="screen-orientation" content="portrait"> <!-- UC 强制竖屏 -->
+  <meta name="x5-orientation"content="portrait"> <!-- QQ 强制竖屏 --> 
   <title>Document</title>
   <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="./css/index.css">
@@ -19,7 +24,10 @@
     <section>section</section>
     <aside>aside</aside>
     <footer>footer</footer>
-    <download></download>
+    <div class="tools">
+      <download></download>
+      <backtop></backtop>
+    </div>
     <!-- <template id="demo1">
       <h2>标签模版</h2>
     </template> -->
@@ -27,18 +35,32 @@
 </body>
 </html>
 <script type="text/template" id="demo1">
-  <svg class="download" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 14 17">
+  <svg class="download" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 14 17" @click="download">
     <path class="arrow" fill="#fff" fill-rule="evenodd" d="M14 6h-4V0H4v6H0l7 7 7-7z"></path>
     <path class="line" fill="#fff" fill-rule="evenodd" d="M0 15v2h14v-2H0z"></path>
   </svg>
 </script>
-<!-- <script type="x-template" id="demo3">
+<!-- <script type="x-template" id="demo3"> -->
+<!-- <script type="text/x-template" id="demo3">
     <h2 style="color:red">我是script标签模板</h2>
 </script> -->
 <script>
   
   Vue.component('download', {
-    template: '#demo1'
+    template: '#demo1',
+    methods: {
+      download() {
+        renderHTMLtoPDF()
+      },
+    },
+  })
+  Vue.component('backtop', {
+    template: '<i class="backtop" @click="backtop"></i>',
+    methods: {
+      backtop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      },
+    },
   })
 
   var app = new Vue({
@@ -54,15 +76,6 @@
       // renderHTMLtoPDF()
     },
     methods: {
-      download() {
-        const icon_download = `
-          <svg class="download" xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 14 17">
-            <path class="arrow" fill="#fff" fill-rule="evenodd" d="M14 6h-4V0H4v6H0l7 7 7-7z"></path>
-            <path class="line" fill="#fff" fill-rule="evenodd" d="M0 15v2h14v-2H0z"></path>
-          </svg>
-          `
-        // icon_download.
-      },
     },
     
   })
