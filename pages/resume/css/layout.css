@@ -1,13 +1,20 @@
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
 #app{
+  padding: 10px;
+  box-sizing: border-box;
   display: grid;
-  grid-template-rows: 80px 1fr 50px;
-  grid-template-columns: 15% 1fr 18%;
+  grid-template-rows: 1fr 50px;
+  grid-template-columns: 25% 1fr;
   grid-gap: 5px;
   height: 100vh;
   grid-template-areas: 
-  "header header header"
-  "nav section aside"
-  "footer footer footer";
+  "nav section"
+  "footer footer";
 }
 @media (max-width: 640px) {
   #app{
@@ -21,11 +28,6 @@
   }
 }
 
-header {
-  background: #707070;
-  grid-area: header;
-}
-
 nav {
   background: #C9BFBF;
   grid-area: nav; 
@@ -34,11 +36,6 @@ nav {
 section {
   background: #ABABAB;
   grid-area: section;    
-}
-
-aside {
-  background: #C9C9C9;
-  grid-area: aside; 
 }
 
 footer {
