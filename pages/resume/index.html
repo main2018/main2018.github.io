@@ -10,7 +10,9 @@
   <meta name="screen-orientation" content="portrait"> <!-- UC 强制竖屏 -->
   <meta name="x5-orientation"content="portrait"> <!-- QQ 强制竖屏 --> 
   <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/icon.css">
   <link rel="stylesheet" href="./css/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
@@ -19,18 +21,27 @@
 </head>
 <body>
   <div id="app">
-    <nav class="profile">
-      <div class="profile-avatar loader">
-        <div class="face">
-          <div class="circle"></div>
+    <aside class="profile">
+      <div class="profile-header">
+        <div class="profile-avatar loader">
+          <div class="face">
+            <div class="circle"></div>
+          </div>
+          <div class="face">
+            <div class="circle"></div>
+          </div>
         </div>
-        <div class="face">
-          <div class="circle"></div>
+        <div class="profile-header-info">
+          <h2><b>王攀</b></h2>
+          <h4><b>Web 前端工程师</b></h4>
+          <h5>无敌是多么寂寞，啊 多么寂寞</h5>
         </div>
       </div>
-    </nav>
+      <hr>
+      
+      <i class="icon fs-lg icon-profile"></i>
+    </aside>
     <section>section</section>
-    <footer>footer</footer>
     <div class="tools">
       <download></download>
       <backtop></backtop>

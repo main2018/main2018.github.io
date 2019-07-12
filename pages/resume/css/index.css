@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 
 .profile{
   text-align: center;
@@ -82,6 +89,21 @@ border-radius: 50%;
               0 0 8em,
               0 0 10em,
               0 0 0 0.5em rgba(255, 255, 0, 0.1);
+}
+
+.profile-header-info h2,
+.profile-header-info h4,
+.profile-header-info h5{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.profile-header-info h4,
+.profile-header-info h5{
+  margin-top: 10px;
+}
+.profile-header-info h5{
+  font-weight: 500;
+  color: var(--color-l);
 }
 
 @keyframes animate {
