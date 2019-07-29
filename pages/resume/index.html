@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="browsermode" content="application"> <!-- UC浏览器应用模式 -->
   <meta name="full-screen" content="yes"> <!-- UC 强制全屏 -->
@@ -10,30 +10,193 @@
   <meta name="screen-orientation" content="portrait"> <!-- UC 强制竖屏 -->
   <meta name="x5-orientation"content="portrait"> <!-- QQ 强制竖屏 -->
   <title>Document</title>
+  <base target="_blank">
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/icon.css">
   <link rel="stylesheet" href="./css/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
   <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
   <script src="./js/pdf.js"></script>
+  <script src="./js/resume.js"></script>
 </head>
 <body>
   <div id="app">
-    <nav class="profile">
-      <div class="profile-avatar loader">
-        <div class="face">
-          <div class="circle"></div>
+    <aside class="profile">
+      <div class="profile-header">
+        <div class="profile-avatar loader">
+          <div class="face">
+            <div class="circle"></div>
+          </div>
+          <div class="face">
+            <div class="circle"></div>
+          </div>
         </div>
-        <div class="face">
-          <div class="circle"></div>
+        <div class="profile-header-info">
+          <h3><b>{{resume.basics.name}}</b></h3>
+          <h4><b>{{resume.basics.position}}</b></h4>
+          <h5>{{resume.basics.label}}</h5>
         </div>
       </div>
-    </nav>
-    <section>section</section>
-    <footer>footer</footer>
+      <hr>
+      <div class="profile-content">
+        <div class="profile-content-item" v-for="profile in profiles">
+          <i :class="`icon fs-lg icon-${profile.icon}`"></i>
+          <a :class="{link: profile.islink}" :href="profile.islink ? profile.text : ''">{{profile.text}}</a>
+        </div>
+      </div>
+      <hr>
+      <div class="profile-footer">
+        <a class="github" :href="profile.url" :style="{backgroundImage: `url(${profile.icon})`}" v-for="profile in resume.basics.profiles"></a>
+      </div>
+    </aside>
+    <section>
+      <h4>背景资料</h4>
+      <hr>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-board"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="about">自我描述</h4>
+          <ul>
+            <li v-for="item in resume.basics.summary">{{item}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-office"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="work-experience">工作经历</h4>
+          <div class="section-item-child" v-for="item in resume.work">
+            <h4>
+              <a href="" class="link">{{item.company}}</a>
+              <span>{{item.position}}</span>
+            </h4>
+            <time><small>{{item.startDate}} - {{item.endDate}}</small></time>
+            <p>{{item.summary}}</p>
+            <ul>
+              <li v-for="highlight in item.highlights">{{highlight}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-graduation-cap"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="education">教育经历</h4>
+          <div class="section-item-child" v-for="item in resume.education">
+            <p>{{item.institution}}, {{item.studyType}}, {{item.area}}</p>
+            <time><small>{{item.startDate}} - {{item.endDate}}</small></time>
+          </div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-child"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="project-experience">项目经验</h4>
+          <div class="section-item-child" v-for="item in resume.project">
+            <h4>
+              <a href="" class="link">{{item.organization}}</a>
+              <span>{{item.position}}</span>
+            </h4>
+            <time><small>{{item.startDate}} - {{item.endDate}}</small></time>
+            <p>{{item.summary}}</p>
+            <ul>
+              <li v-for="highlight in item.highlights">{{highlight}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-newspaper"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="publications">作品展示</h4>
+          <div class="section-item-child" v-for="item in resume.publications">
+            <h4>
+              <a href="" class="link">{{item.name}}</a>
+              <span>{{item.publisher}}</span>
+            </h4>
+            <p>{{item.summary}}</p>
+            <time><small>{{item.releaseDate}}</small></time>
+          </div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-tools"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="skills">技能评价</h4>
+          <div class="section-item-child" v-for="item in resume.skills">
+            <p>{{item.name}}</p>
+            <a class="button" v-for="item in item.keywords">{{item}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-trophy"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="awards">荣誉证书</h4>
+          <div class="section-item-child" v-for="item in resume.awards">
+            <p>{{item.title}}, {{item.awarder}}</p>
+            <time><small>{{item.date}}</small></time>
+          </div>
+        </div>
+      </div>
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-heart"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="interests">兴趣爱好</h4>
+          <div class="section-item-child" v-for="item in resume.interests">
+            <p>{{item.name}}</p>
+            <a :href="/^http/i.test(item.url) ? item.url : ''" class="button" v-for="item in item.keywords" :title="item.url">{{item.name}}</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-item">
+        <div class="section-item-icon">
+          <i class="icon fs-lg icon-thumbs-up"></i>
+        </div>
+        <div class="section-item-content">
+          <h4 id="references">座右铭</h4>
+          <div class="section-item-child">
+            <blockquote v-for="item in resume.references">
+              {{item.reference}}
+              <small>{{item.name}}</small>
+            </blockquote>
+          </div>
+        </div>
+        
+      </div>
+    </section>
     <div class="tools">
       <download></download>
       <backtop></backtop>
+      <div class="anchors">
+        <i class="icon-bars" @click="anchorsShow = true"></i>
+        <div class="anchors-content" :class="{active: anchorsShow}">
+          <a class="anchor link" v-for="anchor in anchors" :href="`#${anchor.href}`" target="_self" @click="anchorsShow = false">
+            <i :class="`mr-10 icon-${anchor.icon}`"></i>
+            {{anchor.text}}
+          </a>
+          <div class="anchors-close" @click="anchorsShow = false">×</div>
+        </div>
+      </div>
     </div>
     <!-- <template id="demo1">
       <h2>标签模版</h2>
@@ -76,7 +239,53 @@
       return {
         val: '',
         color: '#C00000',
-        width: 100
+        width: 100,
+        resume,
+        anchorsShow: false,
+        anchors: [
+          {icon: 'board', href: 'about', text: '自我描述'},
+          {icon: 'office', href: 'work-experience', text: '工作经历'},
+          {icon: 'graduation-cap', href: 'education', text: '教育经历'},
+          {icon: 'child', href: 'project-experience', text: '项目经验'},
+          {icon: 'newspaper', href: 'publications', text: '作品展示'},
+          {icon: 'tools', href: 'skills', text: '技能评价'},
+          {icon: 'trophy', href: 'awards', text: '荣誉证书'},
+          {icon: 'heart', href: 'interests', text: '兴趣爱好'},
+          {icon: 'thumbs-up', href: 'references', text: '座右铭'},
+        ],
+      }
+    },
+    computed: {
+      profiles() {
+        const { gender, age, worklife, location, phone, email, website } = resume.basics
+        const { languages = [] } = resume
+        return [
+          {
+            icon: 'profile',
+            text: `${gender} ${age} ${worklife}年工作经验`
+          },
+          {
+            icon: 'location',
+            text: location
+          },
+          {
+            icon: 'phone',
+            text: phone
+          },
+          {
+            icon: 'mail',
+            text: email
+          },
+          {
+            icon: 'link',
+            text: website,
+            islink: true,
+          },
+          {
+            icon: 'language',
+            text: ((() => languages.reduce((total, curr) => `${total} ${curr.language}`, ''))())
+          },
+        ]
       }
     },
     mounted() {

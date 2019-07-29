@@ -1,48 +1,75 @@
+:root{
+  --gap: 10px;
+  --color-l: #707070;
 
+  --border-color: #e6e6e6;
+
+  --color-link: #337ab7;
+  --color-text: #333;
+  --font-size: 14px;
+  --font-size-small: 12px;
+}
+
+html, body{
+  scroll-behavior: smooth;
+}
 body{
   margin: 0;
   padding: 0;
+  background-color: #f0f0f0;
+  color: var(--color-text);
+  font-size: var(--font-size);
+  font-family: Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+  line-height: 1.5;
 }
 
 #app{
   padding: 10px;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 1fr 50px;
+  /* grid-auto-rows: auto; */
   grid-template-columns: 25% 1fr;
-  grid-gap: 5px;
-  height: 100vh;
+  grid-gap: var(--gap);
+  /* height: 100vh; */
   grid-template-areas: 
-  "nav section"
-  "footer footer";
-}
-@media (max-width: 640px) {
-  #app{
-    grid-template-areas:
-      "header header header"
-      "nav nav nav"
-      "section section section"
-      "aside aside aside"
-      "footer footer footer";
-    grid-template-rows: 80px 80px 1fr 50px;
-  }
+  "aside section";
 }
 
-nav {
-  background: #C9BFBF;
-  grid-area: nav; 
+aside {
+  grid-area: aside; 
+  align-self: start;
+  position: sticky;
+  top: 10px;
 }
 
 section {
-  background: #ABABAB;
   grid-area: section;    
 }
 
-footer {
-  background: #707070;
-  grid-area: footer;
-}
 
 header, nav, section, aside, footer {
-  padding: 5px;
+  padding: var(--gap);
+  background: #fff;
+  border: 1px solid #e6e6e6;
+}
+
+.link{
+  color: var(--color-link);
+  cursor: pointer;
+}
+.link:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  #app{
+    grid-template-areas:
+      "aside"
+      "section";
+    /* grid-template-rows: 80px 1fr; */
+    grid-template-columns: auto;
+  }
+  aside{
+    position: static;
+  }
 }
