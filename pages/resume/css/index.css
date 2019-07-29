@@ -242,7 +242,7 @@ section>h4{
 
 
 .tools{
-  --color: rgb(247, 146, 146);
+  --color: var(--color-link);
   --color-active: #357ebd;
 
   display: flex;
@@ -263,7 +263,7 @@ section>h4{
   overflow: visible;
 }
 .download path{
-  fill: var(--color);
+  fill: var(--color-link);
 }
 .download:hover .arrow {
   animation: bounce 1s both ease-out 1;
@@ -276,7 +276,7 @@ section>h4{
   height: 20px;
   border-top: 2px solid;
   border-right: 2px solid;
-  border-color: var(--color);
+  border-color: var(--color-link);
   font-style: normal;
   transform: rotate(-45deg);
   overflow: hidden;
@@ -322,9 +322,11 @@ section>h4{
   transform-origin: 100% 100%;
   transform: scale(0);
   transition: transform .3s;
+  visibility: hidden;
 }
 .tools .anchors-content.active{
   transform: scale(1);
+  visibility: visible;
 }
 .tools .anchors-content .anchor{
   white-space: nowrap;
