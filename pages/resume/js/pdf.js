@@ -39,6 +39,6 @@ var renderHTMLtoPDF = () => {
         }
       }
     }
-    pdf.save('test.pdf')
+    pdf.save('王攀-web前端.pdf')
   })
 }
