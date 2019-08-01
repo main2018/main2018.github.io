@@ -113,9 +113,9 @@ var resume = {
         ]
     },
     {
-        'organization': '美味供应链（微信小程序）',
+        'organization': '一块扶贫',
         'position': 'Web 前端工程师',
-        'website': '',
+        'website': 'http://fupin.yaleai.com/',
         'startDate': '2018.05',
         'endDate': '2018.06',
         'summary': '微信小程序',
@@ -142,9 +142,9 @@ var resume = {
         ]
     },
     {
-        'organization': '上海中科院后台管理',
+        'organization': '当归网',
         'position': 'Web 前端工程师',
-        'website': '',
+        'website': 'http://www.dangguiwang.com',
         'startDate': '2017.01',
         'endDate': '2017.04',
         'summary': 'React + React-router + Redux + Wepack + ES6 + PostCSS',
@@ -221,9 +221,9 @@ var resume = {
         ]
     },
     {
-        'organization': '跑团助手2.0开发',
+        'organization': '徒客云相册',
         'position': 'Web 前端工程师',
-        'website': '',
+        'website': '119.23.231.181:8095',
         'startDate': '2015.12',
         'endDate': '2016.02',
         'summary': 'AngularJS + Gulp + Sass',
