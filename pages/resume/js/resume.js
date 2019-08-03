@@ -10,6 +10,7 @@ var resume = {
       'email': '375277023@qq.com',
       'phone': '13322061910',
       'website': 'https://github.com/main2018',
+      'codepen': 'https://codepen.io/main2018',
       'summary': [
           '3年+前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：电子商务、房地产、企业管理、SPA 应用（PC/Moblie）等等',
           '喜欢关注 Web 前端相关新技术（Vue, Flutter...），对于新技术有很强的学习兴趣',
