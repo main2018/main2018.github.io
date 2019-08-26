@@ -104,41 +104,25 @@ var resume = {
         'organization': '徒客共享',
         'position': 'Web 前端工程师',
         'website': 'http://www.tukeshare.com',
-        'startDate': '2017.06',
-        'endDate': '2018.12',
+        'startDate': '2017.11',
+        'endDate': '2018.03',
         'summary': 'Vue Vue-Router Vuex Axios',
         'highlights': [
-            '我就职于美味供应链事业部，开发团队一共十多人，协同开发一款供应链 SaaS 软件，主要功能包括门店管理、集采中心管理等。',
-            '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
-            '项目基于 React + React-router + Redux + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；由于旧版本线上编译发布时间较长（约20分钟），通过 Wepack 开启多线程、按需加载等功能优化使之编译速度到达约 12 分钟。',
-            '项目正式上线后，Web 前端性能及用户体验表现良好，为商家提供了便利。',
-            '后台： http://manager.tukeshare.com'
+          '此项目为户外徒步众筹平台，主要功能有：活动发布，活动报名，在线支付，分享，众筹，互动中心，相册',
+          '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
+          '项目基于 Vue + Vue-router + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；',
+          '后台： http://manager.tukeshare.com'
         ]
     },
     {
       'organization': '徒客云相册',
       'position': 'Web 前端工程师',
       'website': 'http://tu.tukeshare.com',
-      'startDate': '2017.06',
-      'endDate': '2018.12',
+      'startDate': '2018.04',
+      'endDate': '2018.5',
       'summary': 'Vue Vue-Router Vuex Axios',
       'highlights': [
-          '我就职于美味供应链事业部，开发团队一共十多人，协同开发一款供应链 SaaS 软件，主要功能包括门店管理、集采中心管理等。',
-          '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
-          '项目基于 React + React-router + Redux + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；由于旧版本线上编译发布时间较长（约20分钟），通过 Wepack 开启多线程、按需加载等功能优化使之编译速度到达约 12 分钟。',
-          '项目正式上线后，Web 前端性能及用户体验表现良好，为商家提供了便利。',
-          '后台： http://manager.tukeshare.com'
-      ]
-    },
-    {
-      'organization': '徒客云相册',
-      'position': 'Web 前端工程师',
-      'website': 'http://tu.tukeshare.com',
-      'startDate': '2017.06',
-      'endDate': '2018.12',
-      'summary': 'Vue Vue-Router Vuex Axios',
-      'highlights': [
-          '我就职于美味供应链事业部，开发团队一共十多人，协同开发一款供应链 SaaS 软件，主要功能包括门店管理、集采中心管理等。',
+          '徒客共享的子项目，为户外活动提供图集展示，上传，支持文件夹上传。',
           '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
           '项目基于 React + React-router + Redux + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；由于旧版本线上编译发布时间较长（约20分钟），通过 Wepack 开启多线程、按需加载等功能优化使之编译速度到达约 12 分钟。',
           '项目正式上线后，Web 前端性能及用户体验表现良好，为商家提供了便利。',
@@ -149,13 +133,12 @@ var resume = {
         'organization': '一块扶贫',
         'position': 'Web 前端工程师',
         'website': 'http://fupin.yaleai.com/',
-        'startDate': '2018.05',
-        'endDate': '2018.06',
-        'summary': '微信小程序',
+        'startDate': '2018.07',
+        'endDate': '2018.09',
+        'summary': 'Nuxt',
         'highlights': [
-            '2018年5月到2018年6月负责开发的一款美味供应链（微信小程序）的项目，主要功能包括下单，消息通知、查看报表等功能。',
-            '由于是新需求新项目，只有一个人参与前端开发，前期调研了小程序与公众号通信等相关资料，以及参与项目的需求评审，到确定设计稿阶段。',
-            '根据 UI 提供的设计稿，百分百还原页面及其交互效果，并且通过小程序 rpx 设计方案兼容多尺寸移动设备。',
+            '在线众筹捐助平台，类似于水滴筹，主要功能有：众筹发布，分享，在线支付，排行榜',
+            '根据 UI 提供的设计稿，百分百还原页面及其交互效果。',
             '项目经验收，无重大漏洞，正式上线后，用户体验良好，功能完善。'
         ]
     },
@@ -163,18 +146,29 @@ var resume = {
         'organization': '雪顿云商',
         'position': 'Web 前端工程师',
         'website': 'http://ys.yaleai.com/',
-        'startDate': '2017.04',
-        'endDate': '2017.05',
+        'startDate': '2018.11',
+        'endDate': '2019.2',
         'summary': '公众号 微信小程序',
         'highlights': [
-            '2017年4月到2017年5月独立负责开发的一款颜值评分项目，包括颜值 PK、夫妻相、颜值榜等功能；',
-            '由于是个人项目，一个人担任多项角色负责参与产品需求、页面交互设计过程、前后端的开发、Ubuntu 16.04 服务器部署等工作；',
-            '前端采用微信小程序开发，在此封装了高效的可复用的组件模块，通过组件化开发极大的提升了开发效率；后端采用 NodeJS 开发，基于 Express 框架提供 RESTful API；',
-            '项目中采用 Face++ 人脸识别服务技术，检测并定位图片中的人脸，返回人脸坐标，然后通过面部黄金比例计算出颜值评分；',
-            '项目上线后用户体验流畅，用户数量不断增加，至此已达 5 万多。',
+            '电商平台，有买家和商家模块，并有会员等级积分机制。',
+            '从项目搭建到项目上线，全部由我一个人完成，采用VantUi + Nuxt，同时配有小程序端。',
             '系统后台： http://ysmanager.yaleai.com;',
             '商家后台 http://ysgl.yaleai.com;'
         ]
+    },
+    {
+      'organization': '美图文化',
+      'position': 'Web 前端工程师',
+      'website': 'http://www.foto2.cn',
+      'startDate': '2019.02',
+      'endDate': '2019.03',
+      'summary': 'AngularJS + Wepack + ES6 + PostCSS',
+      'highlights': [
+          '2016年4月到2016年10月我们四人小组负责开发一款智慧微校园的项目，包括班级管理、成绩管理、信息发布，报修管理等功能，将教学、科研、管理和校园生活进行充分融合；',
+          '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
+          '项目基于 AngularJS + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码；',
+          '项目正式在龚路小学上线之后，提升了学校日常管理效率，课堂效率和质量直线走高，受到教师与家长的广泛好评。'
+      ]
     },
     {
         'organization': '当归网',
@@ -182,96 +176,30 @@ var resume = {
         'website': 'http://www.dangguiwang.com',
         'startDate': '2017.01',
         'endDate': '2017.04',
-        'summary': 'React + React-router + Redux + Wepack + ES6 + PostCSS',
+        'summary': 'Nuxt + Wepack + ES6 + PostCSS',
         'highlights': [
-            '2017年1月到2017年4月我们四人小组负责开发的一款 CMS 内容管理系统项目包括内容管理、模板管理、发布管理，为上海中科院提供可视化后台管理功能；',
+            '当归资讯网站',
             '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
             '项目基于 React + React-router + Redux + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；',
             '项目上线后，前端性能表现良好，测试结果也没有任何异常，客户也很满意。',
             '后台 http://manager.dangguiwang.com'
         ]
     },
-    {
-        'organization': '北京狮子会',
-        'position': 'Web 前端工程师',
-        'website': 'https://bjlions.yaleai.com;',
-        'startDate': '2016.10',
-        'endDate': '2016.12',
-        'summary': 'AngularJS + Wepack + ES6 + PostCSS',
-        'highlights': [
-            '2016年10月到2016年12月我们四人小组负责开发一款会议管理系统的项目，包括会议预订、信息发布、微信签到、扫码签到等功能；',
-            '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-            '项目基于 AngularJS + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码；',
-            '项目上线后，已多次试点于中小型重要会议中，参会人员能随时轻松查看活动信息、下载资料，更为便捷。',
-            '后台： http://bjlionsgl.yaleai.com;',
-        ]
-    },
-    {
-        'organization': '美图文化',
-        'position': 'Web 前端工程师',
-        'website': 'http://www.foto2.cn',
-        'startDate': '2016.04',
-        'endDate': '2016.10',
-        'summary': 'AngularJS + Wepack + ES6 + PostCSS',
-        'highlights': [
-            '2016年4月到2016年10月我们四人小组负责开发一款智慧微校园的项目，包括班级管理、成绩管理、信息发布，报修管理等功能，将教学、科研、管理和校园生活进行充分融合；',
-            '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-            '项目基于 AngularJS + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码；',
-            '项目正式在龚路小学上线之后，提升了学校日常管理效率，课堂效率和质量直线走高，受到教师与家长的广泛好评。'
-        ]
-    },
-    {
-        'organization': '比赛助手后台开发 前端重构',
-        'position': 'Web 前端工程师',
-        'website': '',
-        'startDate': '2016.02',
-        'endDate': '2016.03',
-        'summary': 'AngularJS + Wepack + ES6 + PostCSS',
-        'highlights': [
-            '项目基于 AngularJS + Wepack + ES6 + PostCSS 重构项目，克服了多人协作开发的问题，使得研发成本大大降低、快速上线。'
-        ]
-    },
-    {
-        'organization': '比赛助手后台开发',
-        'position': 'Web 前端工程师',
-        'website': '',
-        'startDate': '2015.12',
-        'endDate': '2016.02',
-        'summary': 'AngularJS + Wepack + ES6 + PostCSS',
-        'highlights': [
-            '比赛助手后台采用 AngularJS + Wepack + ES6 + PostCSS 为主体框架开发，主要完成登陆注册模块、比赛赛事创建功能及相关赛事的辅助模块：赛事管理、赛事查询、选手管理、成绩管理、证书编辑',
-            '赛事管理主要包括比赛赛事的创建至比赛结束后成绩的及时发布，以及赛后成绩查询',
-            '选手管理主要包括选手信息列表查询及导入、编辑、新增等操作'
-        ]
-    },
-    {
-        'organization': '比赛成绩查询开发',
-        'position': 'Web 前端工程师',
-        'website': '',
-        'startDate': '2015.12',
-        'endDate': '2016.02',
-        'summary': 'AngularJS + Gulp + Sass',
-        'highlights': [
-            '前端基础框架搭建及简单界面设计，基于 AngularJS + Gulp + Sass 开发',
-            '比赛成绩查询功能模块的实现（赛事列表、赛事科目、团队成绩、个人成绩等）',
-            '根据特殊的比赛定制不同的查询页面'
-        ]
-    },
-    {
-        'organization': '徒客云相册',
-        'position': 'Web 前端工程师',
-        'website': '119.23.231.181:8095',
-        'startDate': '2015.12',
-        'endDate': '2016.02',
-        'summary': 'AngularJS + Gulp + Sass',
-        'highlights': [
-            '项目基于 AngularJS + Gulp + Sass 开发',
-            '跑团助手2.0开发，服务于跑友参加各种约跑活动提供便利',
-            '微信端授权确认身份后才登录',
-            '跑团团长可以发布活动、编辑活动、取消活动',
-            '跑友报名活动、交报名费、签到活动、分享活动'
-        ]
-    }
+    // {
+    //     'organization': '北京狮子会',
+    //     'position': 'Web 前端工程师',
+    //     'website': 'https://bjlions.yaleai.com;',
+    //     'startDate': '2016.10',
+    //     'endDate': '2016.12',
+    //     'summary': 'AngularJS + Wepack + ES6 + PostCSS',
+    //     'highlights': [
+    //         '2016年10月到2016年12月我们四人小组负责开发一款会议管理系统的项目，包括会议预订、信息发布、微信签到、扫码签到等功能；',
+    //         '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
+    //         '项目基于 AngularJS + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码；',
+    //         '项目上线后，已多次试点于中小型重要会议中，参会人员能随时轻松查看活动信息、下载资料，更为便捷。',
+    //         '后台： http://bjlionsgl.yaleai.com;',
+    //     ]
+    // },
   ],
   'education': [
     {
@@ -289,12 +217,12 @@ var resume = {
     }
   ],
   'awards': [
-      {
-          'title': '全国计算机二级证书',
-          'date': '2013-11-01',
-          'awarder': '教育部考试中心',
-          'summary': ''
-      }
+    {
+      'title': '全国计算机二级证书',
+      'date': '2013-11-01',
+      'awarder': '教育部考试中心',
+      'summary': ''
+    }
   ],
   'publications': [
       {
