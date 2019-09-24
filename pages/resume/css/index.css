@@ -112,6 +112,7 @@
 }
 .profile-content-item a{
   font-size: 0.8em;
+  word-break: break-word;
 }
 
 .profile-footer{
@@ -199,6 +200,7 @@ section>h4{
   border-radius: .25em;
   font-size: 75%;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .section-item blockquote{

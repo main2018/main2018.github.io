@@ -9,7 +9,7 @@ var resume = {
       'picture': '/static/images/avatar.jpg',
       'email': '375277023@qq.com',
       'phone': '13322061910',
-      'website': 'https://github.com/main2018',
+      'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
           '3年+前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：电子商务、房地产、企业管理、SPA 应用（PC/Moblie）等等',
@@ -37,7 +37,8 @@ var resume = {
           'summary': '简族信息技术有限公司',
           'highlights': [
               '参与物业管家项目的研发与测试',
-              '参与美味&招行项目对接'
+              '参与业务需求的分析与设计',
+              '负责web客户端开发，优化客户端版块',
           ]
       },
       {
@@ -86,6 +87,21 @@ var resume = {
       ]
     },
     {
+      'organization': '房亲会',
+      'position': 'Web 前端工程师',
+      'website': 'http://www.fangqinhui.com/',
+      'startDate': '2017.01',
+      'endDate': '2017.04',
+      'summary': '公众号 房产',
+      'highlights': [
+          '房产经纪人平台。主要面向房产经纪人和购房客户。',
+          '房源列表 房亲（我手下的客户） 财务（我的房亲信息，我的收支明细等） 跟单（我正在办理的业务） 咨询（在线与楼盘工作人员聊天）',
+          '负责前端项目搭建，我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。项目采用Jquery开发，利用websocket实现聊天。',
+          '移动端： http://mob.fangqinhui.com/',
+          '公众号： 房亲会'
+      ]
+    },
+    {
         'organization': '房公信',
         'position': 'Web 前端工程师',
         'website': 'https://www.fanggongxin.net/',
@@ -94,9 +110,9 @@ var resume = {
         'summary': '微信公众号',
         'highlights': [
           '二手房在线交易平台',
-          '附近找房，地图搜索，在线交易',
           '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护；',
-          '实现了 地图 在线聊天 支付等功能。',
+          '实现了 附近找房，地图搜索，在线交易 在线聊天 等功能。',
+          '项目基于 Vue + Vue-router + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；',
           '后台：http://manager.fanggongxin.net/'
         ]
     },
@@ -106,11 +122,11 @@ var resume = {
         'website': 'http://www.tukeshare.com',
         'startDate': '2017.11',
         'endDate': '2018.03',
-        'summary': 'Vue Vue-Router Vuex Axios',
+        'summary': '户外徒步 众筹平台',
         'highlights': [
           '此项目为户外徒步众筹平台，主要功能有：活动发布，活动报名，在线支付，分享，众筹，互动中心，相册',
           '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
-          '项目基于 Vue + Vue-router + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；',
+          'Nuxt + Webpack + ES6',
           '后台： http://manager.tukeshare.com'
         ]
     },
@@ -120,12 +136,11 @@ var resume = {
       'website': 'http://tu.tukeshare.com',
       'startDate': '2018.04',
       'endDate': '2018.5',
-      'summary': 'Vue Vue-Router Vuex Axios',
+      'summary': '相册',
       'highlights': [
           '徒客共享的子项目，为户外活动提供图集展示，上传，支持文件夹上传。',
           '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
-          '项目基于 React + React-router + Redux + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；由于旧版本线上编译发布时间较长（约20分钟），通过 Wepack 开启多线程、按需加载等功能优化使之编译速度到达约 12 分钟。',
-          '项目正式上线后，Web 前端性能及用户体验表现良好，为商家提供了便利。',
+          'Nuxt + Webpack + ES6',
           '后台： http://manager.tukeshare.com'
       ]
     },
@@ -135,7 +150,7 @@ var resume = {
         'website': 'http://fupin.yaleai.com/',
         'startDate': '2018.07',
         'endDate': '2018.09',
-        'summary': 'Nuxt',
+        'summary': '众筹平台',
         'highlights': [
             '在线众筹捐助平台，类似于水滴筹，主要功能有：众筹发布，分享，在线支付，排行榜',
             '根据 UI 提供的设计稿，百分百还原页面及其交互效果。',
@@ -162,11 +177,11 @@ var resume = {
       'website': 'http://www.foto2.cn',
       'startDate': '2019.02',
       'endDate': '2019.03',
-      'summary': 'AngularJS + Wepack + ES6 + PostCSS',
+      'summary': 'PC 移动',
       'highlights': [
-          '2016年4月到2016年10月我们四人小组负责开发一款智慧微校园的项目，包括班级管理、成绩管理、信息发布，报修管理等功能，将教学、科研、管理和校园生活进行充分融合；',
+          '公司门户信息类网站，主要展示公司发布的信息文章，配有后台管理，所有信息均可动态配置，如：网站logo，导航栏分类，首页模块，关于我们页内容。',
           '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-          '项目基于 AngularJS + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码；',
+          'Nuxt + Webpack + ES6',
           '项目正式在龚路小学上线之后，提升了学校日常管理效率，课堂效率和质量直线走高，受到教师与家长的广泛好评。'
       ]
     },
@@ -174,14 +189,13 @@ var resume = {
         'organization': '当归网',
         'position': 'Web 前端工程师',
         'website': 'http://www.dangguiwang.com',
-        'startDate': '2017.01',
-        'endDate': '2017.04',
-        'summary': 'Nuxt + Wepack + ES6 + PostCSS',
+        'startDate': '2019.05',
+        'endDate': '2019.07',
+        'summary': '咨询网站',
         'highlights': [
             '当归资讯网站',
             '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-            '项目基于 React + React-router + Redux + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；',
-            '项目上线后，前端性能表现良好，测试结果也没有任何异常，客户也很满意。',
+            'Nuxt + Webpack + ES6',
             '后台 http://manager.dangguiwang.com'
         ]
     },
@@ -204,62 +218,62 @@ var resume = {
   'education': [
     {
       'institution': '海南师范大学',
-      'area': '计算机科学与技术',
+      // 'area': '计算机科学与技术',
       'studyType': '本科',
       'startDate': '2011-09',
       'endDate': '2015-06',
       'gpa': '4.0',
       'courses': [
-        '数据结构',
-        '操作系统',
-        '编译原理'
+        // '数据结构',
+        // '操作系统',
+        // '编译原理'
       ]
     }
   ],
   'awards': [
-    {
-      'title': '全国计算机二级证书',
-      'date': '2013-11-01',
-      'awarder': '教育部考试中心',
-      'summary': ''
-    }
+    // {
+    //   'title': '全国计算机二级证书',
+    //   'date': '2013-11-01',
+    //   'awarder': '教育部考试中心',
+    //   'summary': ''
+    // }
   ],
   'publications': [
-      {
-          'name': 'angular-weui',
-          'publisher': 'skyvow',
-          'releaseDate': '2016-10',
-          'website': 'https://github.com/skyvow/angular-weui',
-          'summary': 'Angular WeUI - 基于WeUI封装一些常用指令及服务'
-      },
-      {
-          'name': 'wux',
-          'publisher': 'skyvow',
-          'releaseDate': '2016-10',
-          'website': 'https://github.com/skyvow/wux',
-          'summary': 'wux - 微信小程序自定义组件（对话框、指示器、五星评分...）'
-      },
-      {
-          'name': 'm-mall',
-          'publisher': 'skyvow',
-          'releaseDate': '2016-12',
-          'website': 'https://github.com/skyvow/m-mall',
-          'summary': '微信小程序-小商城前台（简单的商城 DEMO，支付未完善）'
-      },
-      {
-          'name': 'm-mall-admin',
-          'publisher': 'skyvow',
-          'releaseDate': '2016-12',
-          'website': 'https://github.com/skyvow/m-mall-admin',
-          'summary': '微信小程序-小商城后台（基于 NodeJS 实现 restful API）'
-      },
-      {
-          'name': 'skyvow.github.io',
-          'publisher': 'skyvow',
-          'releaseDate': '2017-4',
-          'website': 'https://github.com/skyvow/skyvow.github.io',
-          'summary': 'My resume - 基于 React + React-router + ES6 前端项目'
-      }
+      // {
+      //     'name': 'angular-weui',
+      //     'publisher': 'skyvow',
+      //     'releaseDate': '2016-10',
+      //     'website': 'https://github.com/skyvow/angular-weui',
+      //     'summary': 'Angular WeUI - 基于WeUI封装一些常用指令及服务'
+      // },
+      // {
+      //     'name': 'wux',
+      //     'publisher': 'skyvow',
+      //     'releaseDate': '2016-10',
+      //     'website': 'https://github.com/skyvow/wux',
+      //     'summary': 'wux - 微信小程序自定义组件（对话框、指示器、五星评分...）'
+      // },
+      // {
+      //     'name': 'm-mall',
+      //     'publisher': 'skyvow',
+      //     'releaseDate': '2016-12',
+      //     'website': 'https://github.com/skyvow/m-mall',
+      //     'summary': '微信小程序-小商城前台（简单的商城 DEMO，支付未完善）'
+      // },
+      // {
+      //     'name': 'm-mall-admin',
+      //     'publisher': 'skyvow',
+      //     'releaseDate': '2016-12',
+      //     'website': 'https://github.com/skyvow/m-mall-admin',
+      //     'summary': '微信小程序-小商城后台（基于 NodeJS 实现 restful API）'
+      // },
+      // {
+      //     'name': 'skyvow.github.io',
+      //     'publisher': 'skyvow',
+      //     'releaseDate': '2017-4',
+      //     'website': 'https://github.com/skyvow/skyvow.github.io',
+      //     'summary': 'My resume - 基于 React + React-router + ES6 前端项目'
+      // }
   ],
   'skills': [
       {
@@ -295,10 +309,10 @@ var resume = {
     {
       'name': '社交',
       'keywords': [
-        {name: '知乎', url: ''},
-        {name: '微博', url: ''},
-        {name: '微信', url: '13322061910'},
-        {name: 'QQ', url: '375277023'},
+        // {name: '知乎', url: ''},
+        // {name: '微博', url: ''},
+        {name: '微信', url: 'javascript: void(0);', title: '13322061910'},
+        {name: 'QQ', url: 'tencent://message/?uin=375277023', title: '375277023'},
       ]
     }
   ],
@@ -309,3 +323,5 @@ var resume = {
       }
   ]
 }
+
+resume.project.reverse()
