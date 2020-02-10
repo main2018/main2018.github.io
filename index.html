@@ -8,6 +8,140 @@
   <link rel="stylesheet" href="./static/index.css">
   <link rel="stylesheet" href="./static/light.css">
   <link rel="stylesheet" href="./static/night.css">
+  <style>
+    @keyframes move{
+      0%, 100%{
+        transform: translate(-50%, calc(-50% + var(--move)));
+      }
+      50%{
+        transform: translate(-50%, calc(-50% - var(--move)));
+      }
+    }
+    .happy-new-year{
+      position: fixed!important;
+      left: 20px!important;
+      z-index: 99999;
+      --move-base: 10px;
+      --move-gap: 3px;
+      cursor: pointer;
+    }
+    .year{
+      position: absolute;
+      font-family: 'Russo One', sans-serif;
+      font-weight: 900;
+      font-size: 50px;
+      animation: move 3s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .year:first-child:hover
+    .year:first-child:hover ~ .year{
+      animation-play-state: paused;
+    }
+        
+    .year:nth-child(1) {
+      color: #fff;
+      z-index: 13;
+      -webkit-animation-delay: 0ms;
+              animation-delay: 0ms;
+      --move: var(--move-base);
+    }
+    .year:nth-child(2) {
+      color: #fbca00;
+      z-index: 12;
+      -webkit-animation-delay: 100ms;
+              animation-delay: 100ms;
+      --move: calc(var(--move-base) + var(--move-gap));
+    }
+    .year:nth-child(3) {
+      color: #fba317;
+      z-index: 11;
+      -webkit-animation-delay: 200ms;
+              animation-delay: 200ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 2);
+    }
+    .year:nth-child(4) {
+      color: #f58023;
+      z-index: 10;
+      -webkit-animation-delay: 300ms;
+              animation-delay: 300ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 3);
+    }
+    .year:nth-child(5) {
+      color: #e96618;
+      z-index: 9;
+      -webkit-animation-delay: 400ms;
+              animation-delay: 400ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 4);
+    }
+    .year:nth-child(6) {
+      color: #ee1f23;
+      z-index: 8;
+      -webkit-animation-delay: 500ms;
+              animation-delay: 500ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 5);
+    }
+    .year:nth-child(7) {
+      color: #dc068e;
+      z-index: 7;
+      -webkit-animation-delay: 600ms;
+              animation-delay: 600ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 6);
+    }
+    .year:nth-child(8) {
+      color: #ac1f8d;
+      z-index: 6;
+      -webkit-animation-delay: 700ms;
+              animation-delay: 700ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 7);
+    }
+    .year:nth-child(9) {
+      color: #622b89;
+      z-index: 5;
+      -webkit-animation-delay: 800ms;
+              animation-delay: 800ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 8);
+    }
+    .year:nth-child(10) {
+      color: #2c2f81;
+      z-index: 4;
+      -webkit-animation-delay: 900ms;
+              animation-delay: 900ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 9);
+    }
+    .year:nth-child(11) {
+      color: #1c428e;
+      z-index: 3;
+      -webkit-animation-delay: 1000ms;
+              animation-delay: 1000ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 10);
+    }
+    .year:nth-child(12) {
+      color: #065b9d;
+      z-index: 2;
+      -webkit-animation-delay: 1100ms;
+              animation-delay: 1100ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 11);
+    }
+    .year:nth-child(13) {
+      color: #007da5;
+      z-index: 1;
+      -webkit-animation-delay: 1200ms;
+              animation-delay: 1200ms;
+      --move: calc(var(--move-base) + var(--move-gap) * 12);
+    }
+    @keyframes move {
+      0%, 100% {
+        -webkit-transform: translate(0, calc(-50% + var(--move)));
+                transform: translate(0, calc(-50% + var(--move)));
+      }
+      50% {
+        -webkit-transform: translate(0, calc(-50% - var(--move)));
+                transform: translate(0, calc(-50% - var(--move)));
+      }
+    }
+  </style>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body class="no-touch">
@@ -45,6 +179,9 @@
         </div>
         <div class="head-main">
           <div class="head-info">
+            <div class="happy-new-year" @click="to2020">
+              <div class="year" v-for="item in 13">2020</div>
+            </div>
             <div>
               <h1>
                 HI MY NAME IS
@@ -167,6 +304,9 @@
         this.createdNight()
       },
       methods: {
+        to2020() {
+          location.href = './static/2020.html'
+        },
         open(index) {
           this.currentIndex = index
           let pageWidth = document.documentElement.clientWidth
