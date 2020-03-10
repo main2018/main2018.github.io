@@ -12,8 +12,8 @@ var resume = {
       'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
-          '3年+前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：电子商务、房地产、企业管理、SPA 应用（PC/Moblie）等等',
-          '喜欢关注 Web 前端相关新技术（Vue, Flutter...），对于新技术有很强的学习兴趣',
+          '3年+前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：电子商务、房地产、企业管理、SPA 应用（PC/Moblie）、手机App 等等',
+          '喜欢关注 Web 前端相关新技术（Vue, Flutter, uniapp...），对于新技术有很强的学习兴趣',
           // '喜欢折腾造轮子，有一些简单的开源项目，不定时会更新 Github 小项目 5k+ Star（https://github.com/skyvow）',
           '热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐'
       ],
@@ -46,7 +46,7 @@ var resume = {
           'position': 'Web 前端工程师',
           'website': '',
           'startDate': '2017.05',
-          'endDate': '至今',
+          'endDate': '2019.09',
           'summary': '海口亚乐科技有限公司',
           'highlights': [
               '根据产品需求文档，进行 Web 前端开发，前端主体框架选型，搭建基础框架',
@@ -57,20 +57,19 @@ var resume = {
               '负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平'
           ]
       },
-      // {
-      //     'company': '上海连趣跑信息技术有限公司',
-      //     'position': 'Web 前端工程师',
-      //     'website': '',
-      //     'startDate': '2015.10',
-      //     'endDate': '2016.04',
-      //     'summary': '上海连趣跑信息技术有限公司',
-      //     'highlights': [
-      //         'Photoshop 对设计图进行切片',
-      //         '根据设计提供的设计稿编写静态页面',
-      //         '负责配合后台开发人员，完成页面的交互及接口对接',
-      //         '负责网站功能模块及后台管理系统的设计'
-      //     ]
-      // },
+      {
+          'company': '海南微窝网络科技有限公司',
+          'position': 'Web 前端工程师',
+          'website': '',
+          'startDate': '2019.10',
+          'endDate': '2020.03',
+          'summary': '海南微窝网络科技有限公司',
+          'highlights': [
+              '完成微窝房源App端',
+              '完成微窝房源项目的外链端',
+              '进行线上聊天研发测试',
+          ]
+      },
   ],
   'project': [
     {
@@ -197,6 +196,20 @@ var resume = {
             'Nuxt + Webpack + ES6',
             '后台 http://manager.dangguiwang.com'
         ]
+    },
+    {
+      'organization': '微窝房源app',
+      'position': 'Web 前端开发',
+      'website': '应用宝/App Store 微窝房源',
+      'startDate': '2019.10',
+      'endDate': '2020.03',
+      'summary': '集 在线房源 3D全景看房 客户管理 电子传单 于一体的房产类App',
+      'highlights': [
+        '负责项目需求的完善，功能的修改',
+        '根据需求修改python打包工具',
+        '完成Android和IOS端App的打包测试 与上线',
+        'Vue + Webpack + ES6 + Cordova + uniapp',
+      ]
     },
     // {
     //     'organization': '北京狮子会',

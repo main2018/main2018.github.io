@@ -352,3 +352,21 @@ section>h4{
 .anchors-close:hover{
   color: red;
 }
+@keyframes bgp{
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.yiqing{
+  font-weight: 600;
+  -webkit-mask-image: linear-gradient(to right, red, orange, yellow, green, cyan, blue, purple);
+  background-image: linear-gradient(to right, red, orange, brown, green, brown, orange, red, orange, brown, green, brown, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-size: 200% 100%;
+  animation: bgp 8s infinite linear;
+}
