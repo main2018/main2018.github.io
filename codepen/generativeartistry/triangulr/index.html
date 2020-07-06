@@ -1,0 +1,245 @@
+<html>
+<head>
+	<!-- Head (banging?) -->
+	<title>triangulr.js</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+	<!-- Le script -->
+	<script src="triangulr.js"></script>
+
+	<!-- Le style -->
+	<style type="text/css">
+
+		/* Base style */
+		body {
+			margin: 0 0 40px;
+			font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+			font-weight: 100;
+			font-size: 24px;
+			color: #444;
+			background-color: #F9F9F9;
+		}
+		small {
+			font-weight: 100;
+		}
+		p {
+			font-size: 1em;
+		}
+		dl dt {
+			font-weight: bold;
+		}
+		dl dd {
+			margin-bottom: 14px;
+		}
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+		.head {
+			height: 80vh;
+			color: #F9F9F9;
+			background: linear-gradient(to bottom right, #ff0055 , #220055);
+			background-color: rgb(138, 0, 85);
+			overflow: hidden;
+			position: relative;
+		}
+		.head h1 {
+			position: absolute;
+			z-index: 10;
+			bottom: 0;
+		}
+		.content-wrap {
+			margin: auto;
+			max-width: 960px;
+			padding: 0 20px;
+		}
+		.smaller {
+			margin: 4px 0;
+			font-size: 0.75em;
+		}
+		.split-box {
+			width: 49%;
+			margin-right: 2%;
+			display: inline-block;
+		}
+		.split-box:last-child {
+			margin-right: 0;
+		}
+		.split-box svg {
+			width: 100%;
+			height: 46vw;
+			max-height: 400px;
+		}
+		.split-box p {
+			text-align: center;
+		}
+
+		/* Trial styling */
+		#trial {
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 14px;
+			border-radius: 10px;
+		}
+		#trial-editor, .code {
+			width: 100%;
+			margin: 0; padding: 10px;
+			border: none;
+			background-color: #eee;
+			font-size: 0.6125em;
+			font-family: monospace;
+			overflow-x: scroll;
+			box-sizing: border-box;
+		}
+		#trial-button {
+			position: absolute;
+			top: 10px; right: 10px;
+			margin: 0; padding: 8px;
+			border: none; border-radius: 6px;
+			background-color: #444;
+			font-size: 16px; font-weight: bold;
+			color: #f9f9f9;
+		}
+		#trial-output {
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- SVG to display -->
+	<div class="head" id="head">
+		<div class="content-wrap">
+			<h1>triangulr<br><small>triangle map generator</small></h1>
+		</div>
+	</div>
+
+	<div class="content-wrap">
+		<p>Who doesn't like triangles? Nobody. Especially hipsters ;-)</p>
+		
+		<p>triangulr is a little JavaScript class to build triangles maps. Completely random. In SVG: ready for HTML or Illustrator use. It give you a bit of flexibility to generate what you need: dimension, triangle size, ratio of mess and color</p>
+		<p>After many evening trying to build nice map of trandom triangles, I realised JavaScript could help me. Nowadays, this pattern is a kind of classic, very popular and used everywhere, but long to make. So I built this little class to make things easier.</p>
+
+		<h2>How to use it?</h2>
+		<p>This is pure JavaScript, no jQuery required or other libraries. Only the simple triangulr.js in your page and you're ready to go.<br>Here is an example:</p>
+		<p class="code">
+			var mySVG = new Triangulr (600, 500, 60, 0);<br>
+			document.getElementById('myDiv').appendChild(mySVG);
+		</p>
+		<p>Triangulr constructor needs these attributes:</p>
+
+		<dl>
+			<dt>width <small>integer</small></dt>
+			<dd>width of the SVG to generate<br>use them like pixels</dd>
+
+			<dt>height <small>integer</small></dt>
+			<dd>height of the SVG to generate<br>use them like pixels</dd>
+
+			<dt>triangleHeight <small>integer</small></dt>
+			<dd>original triangle height<br>like before, use pixels</dd>
+
+			<dt>pointArea <small>integer</small></dt>
+			<dd>area to place random points<br>this value is quite tricky to explain, it's the level of structure randomness (the value is relative to the triangle height)</dd>
+
+			<dt>color <small>function (optional)</small></dt>
+			<dd>function to generate a color for each triangle<br>an object will be passed as parameter with information about the current triangle
+				<p class="smaller">
+					<strong>counter</strong> triangle number<br>
+					<strong>x</strong> column index<br>
+					<strong>y</strong> line index<br>
+					<strong>lines</strong> number of lines in the SVG<br>
+					<strong>cols</strong> number of columns in the SVG<br>
+					<strong>points</strong> array of triangle points
+				</p>
+			</dd>
+		</dl>
+
+		<h2>How it works?</h2>
+		<p>The engine is quite simple to understand, even if at the start, it looks confusing to build this random triangles.<br>To begin, we use the value given to the constructor to create a regular pattern with proper equilateral triangles. To do that, the script start by generate lines of dots. Then a second pass use these points to generate triangles, and also the color function to generate the color code.<br>Then the last pass use the data to render it in a SVG DOM object.</p>
+
+		<div>
+			<div class="split-box">
+				<div id="straight-map"></div>
+				<p>Randomness: 0%</p>
+			</div><div class="split-box">
+				<div id="messy-map"></div>
+				<p>Randomness: 40%</p>
+			</div>
+		</div>
+
+		<h2>Test it</h2>
+		<p>Here is the basic code. Break it, test it.<br>Yes, the stuff below is a little editor, don't forget to press 'update'.</p>
+		<div id="trial">
+			<textarea id="trial-editor" rows="8">var colorGenerator = function (path) {
+  var random = 32;
+  var ratio = (path.x * path.y) / (path.cols * path.lines);
+  var code = Math.floor(255 - (ratio * (255-random)) - Math.random()*random).toString(16);
+  return '#'+code+code+code;
+};
+svg = new Triangulr (960, 400, 80, 40, colorGenerator);</textarea>
+			<button id="trial-button">Run</button>
+			<div id="trial-output"></div>
+		</div>
+
+	</div>
+
+	<!-- Le main script -->
+	<script type="text/javascript">
+		// Header code
+		var headerSVG;
+		var headerContainer = document.getElementById('head');
+		var headerMapColorRender = function (path) {
+		  var random = 32;
+		  var ratio = (path.x + path.y) / (path.cols + path.lines);
+		  var code = Math.floor(255 - (ratio * (255-random)) - Math.random()*random).toString(16);
+		  return '#' + code + '0055';
+		};
+
+		var renderHeader = function() {
+			if (!!headerSVG) {
+				headerSVG.remove();
+			}
+			headerSVG = new Triangulr(
+				window.innerWidth,
+				window.innerHeight,
+				100,
+				50,
+				headerMapColorRender
+			);
+			headerContainer.appendChild(headerSVG);
+		}
+		window.onresize = renderHeader;
+		renderHeader();
+
+		// Random map demo
+		var flatUIclrs = ['1abc9c', '2ecc71', '3498db', '9b59b6', '34495e',
+								'f1c40f', 'e67e22', 'e74c3c', 'ecf0f1', '95a5a6'];
+
+		var colorGenerator = function (path) {
+		  return '#' + flatUIclrs[path.counter % flatUIclrs.length];
+		};
+		document
+			.getElementById('straight-map')
+			.appendChild(new Triangulr (500, 500, 80, 0, colorGenerator));
+		document
+			.getElementById('messy-map')
+			.appendChild(new Triangulr (500, 500, 80, 32, colorGenerator));
+		
+
+		// Trial code
+		var svg;
+		var output = document.getElementById('trial-output');
+		var updatr = document.getElementById('trial-button');
+		var renderTrial = function () {
+			if (!!svg) {
+				svg.remove();
+			}
+			eval(document.getElementById('trial-editor').value);
+			output.appendChild(svg);
+		};
+		updatr.addEventListener('click', renderTrial);
+		renderTrial();
+	</script>
+</body>
+</html>
