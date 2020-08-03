@@ -12,8 +12,8 @@ var resume = {
       'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
-          '3年+前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：电子商务、房地产、企业管理、SPA 应用（PC/Moblie）、手机App 等等',
-          '喜欢关注 Web 前端相关新技术（Vue, Flutter, uniapp...），对于新技术有很强的学习兴趣',
+          '4年前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：教育、电子商务、房地产、企业管理、SPA 应用（PC/Moblie）、手机App 等等',
+          '喜欢关注 Web 前端相关新技术（Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, threejs, 直播技术, 3D可视化...），对于新技术有很强的学习兴趣',
           // '喜欢折腾造轮子，有一些简单的开源项目，不定时会更新 Github 小项目 5k+ Star（https://github.com/skyvow）',
           '热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐'
       ],
@@ -28,48 +28,61 @@ var resume = {
       ]
   },
   'work': [
-      {
-          'company': '简族信息技术有限公司',
-          'position': 'Web 前端工程师',
-          'website': '',
-          'startDate': '2016-7',
-          'endDate': '2017-04',
-          'summary': '简族信息技术有限公司',
-          'highlights': [
-              '参与物业管家项目的研发与测试',
-              '参与业务需求的分析与设计',
-              '负责web客户端开发，优化客户端版块',
-          ]
-      },
-      {
-          'company': '海口亚乐科技有限公司',
-          'position': 'Web 前端工程师',
-          'website': '',
-          'startDate': '2017.05',
-          'endDate': '2019.09',
-          'summary': '海口亚乐科技有限公司',
-          'highlights': [
-              '根据产品需求文档，进行 Web 前端开发，前端主体框架选型，搭建基础框架',
-              '根据设计提供的设计稿编写静态页面',
-              'Javascript 数据处理、Ajax 交互开发、前端公共组件开发',
-              '负责配合后台开发人员，完成页面的交互及接口对接',
-              '负责团队的前端开发质量，提高效率，实施前后端分离',
-              '负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平'
-          ]
-      },
-      {
-          'company': '海南微窝网络科技有限公司',
-          'position': 'Web 前端工程师',
-          'website': '',
-          'startDate': '2019.10',
-          'endDate': '2020.03',
-          'summary': '海南微窝网络科技有限公司',
-          'highlights': [
-              '完成微窝房源App端',
-              '完成微窝房源项目的外链端',
-              '进行线上聊天研发测试',
-          ]
-      },
+    {
+      'company': '中电运行信息技术有限公司',
+      'position': 'Web 前端工程师',
+      'website': '',
+      'startDate': '2020.03',
+      'endDate': '2020.08',
+      'summary': '中电运行信息技术有限公司',
+      'highlights': [
+          '完成寰宇学院 课程直播、大赛服务、前后台权限板块的开发',
+          '维护寰宇学院线上、线下平台',
+      ]
+    },
+    {
+      'company': '海南微窝网络科技有限公司',
+      'position': 'Web 前端工程师',
+      'website': '',
+      'startDate': '2019.10',
+      'endDate': '2020.03',
+      'summary': '海南微窝网络科技有限公司',
+      'highlights': [
+          '完成微窝房源App端',
+          '完成微窝房源项目的外链端',
+          '进行线上聊天研发测试',
+      ]
+    },
+    {
+        'company': '海口亚乐科技有限公司',
+        'position': 'Web 前端工程师',
+        'website': '',
+        'startDate': '2017.05',
+        'endDate': '2019.09',
+        'summary': '海口亚乐科技有限公司',
+        'highlights': [
+            '根据产品需求文档，进行 Web 前端开发，前端主体框架选型，搭建基础框架',
+            '根据设计提供的设计稿编写静态页面',
+            'Javascript 数据处理、Ajax 交互开发、前端公共组件开发',
+            '负责配合后台开发人员，完成页面的交互及接口对接',
+            '负责团队的前端开发质量，提高效率，实施前后端分离',
+            '负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平'
+        ]
+    },
+    {
+      'company': '简族信息技术有限公司',
+      'position': 'Web 前端工程师',
+      'website': '',
+      'startDate': '2016-7',
+      'endDate': '2017-04',
+      'summary': '简族信息技术有限公司',
+      'highlights': [
+          '参与物业管家项目的研发与测试',
+          '参与业务需求的分析与设计',
+          '负责web客户端开发，优化客户端版块',
+      ]
+    },
+      
   ],
   'project': [
     {
@@ -211,21 +224,33 @@ var resume = {
         'Vue + Webpack + ES6 + Cordova + uniapp',
       ]
     },
-    // {
-    //     'organization': '北京狮子会',
-    //     'position': 'Web 前端工程师',
-    //     'website': 'https://bjlions.yaleai.com;',
-    //     'startDate': '2016.10',
-    //     'endDate': '2016.12',
-    //     'summary': 'AngularJS + Wepack + ES6 + PostCSS',
-    //     'highlights': [
-    //         '2016年10月到2016年12月我们四人小组负责开发一款会议管理系统的项目，包括会议预订、信息发布、微信签到、扫码签到等功能；',
-    //         '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-    //         '项目基于 AngularJS + Wepack + ES6 + PostCSS 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码；',
-    //         '项目上线后，已多次试点于中小型重要会议中，参会人员能随时轻松查看活动信息、下载资料，更为便捷。',
-    //         '后台： http://bjlionsgl.yaleai.com;',
-    //     ]
-    // },
+    {
+      'organization': '云创服务',
+      'position': '微信小程序',
+      'website': '云创服务',
+      'startDate': '2020.03',
+      'endDate': '2020.03',
+      'summary': '微商城，微信小程序电商平台',
+      'highlights': [
+        '负责小程序项目的搭建',
+        '完成项目的商家和买家板块',
+        '微信小程序 + Vant',
+      ]
+    },
+    {
+      'organization': '寰宇学院',
+      'position': 'Web 前端工程师',
+      'website': 'https://huanyu.powerun.cn/',
+      'startDate': '2020.4',
+      'endDate': '2020.8',
+      'summary': 'Vue + 七牛云直播',
+      'highlights': [
+          '在线互联网安全培训教育平台，主要模块有：直播课程、认证培训、大赛服务、知识交易等',
+          '项目基于 Vue + 七牛云直播，前后端分离',
+          '负责 在线直播和大赛服务模块，修改项目需求和bug',
+          '后台： https://huanyu.powerun.cn:9443',
+      ]
+    },
   ],
   'education': [
     {
