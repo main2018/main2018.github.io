@@ -257,8 +257,8 @@ var resume = {
       'institution': '海南师范大学',
       // 'area': '计算机科学与技术',
       'studyType': '本科',
-      'startDate': '2011-09',
-      'endDate': '2015-06',
+      'startDate': '2012-09',
+      'endDate': '2016-06',
       'gpa': '4.0',
       'courses': [
         // '数据结构',
