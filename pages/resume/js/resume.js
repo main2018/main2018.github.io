@@ -4,7 +4,7 @@ var resume = {
       'name': '王攀',
       'gender': '男',
       'age': '27',
-      'worklife': '3',
+      'worklife': '4',
       'label': '断剑重铸之日，骑士归来之时',
       'picture': '/static/images/avatar.jpg',
       'email': '375277023@qq.com',
