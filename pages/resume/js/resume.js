@@ -12,8 +12,8 @@ var resume = {
       'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
-          '4年前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：教育、电子商务、房地产、企业管理、SPA 应用（PC/Moblie）、手机App 等等',
-          '喜欢关注 Web 前端相关新技术（Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, threejs, 直播技术, 3D可视化...），对于新技术有很强的学习兴趣',
+          '5年前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：教育直播、电子商务、房地产、企业管理、SPA 应用（PC/Moblie）、手机App 等等',
+          '技术涉及Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, Electron, threejs, 直播技术, 3D可视化, Nodejs, Egg.js...），喜欢关注新技术，对于新技术有很强的学习兴趣，目标全栈',
           // '喜欢折腾造轮子，有一些简单的开源项目，不定时会更新 Github 小项目 5k+ Star（https://github.com/skyvow）',
           '热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐'
       ],
@@ -28,6 +28,18 @@ var resume = {
       ]
   },
   'work': [
+    {
+      'company': '夜猫',
+      'position': 'Web 前端工程师',
+      'website': '',
+      'startDate': '2020.03',
+      'endDate': '2020.08',
+      'summary': '中电运行信息技术有限公司',
+      'highlights': [
+          'web sorder解决倒计时卡顿问题',
+          '维护寰宇学院线上、线下平台',
+      ]
+    },
     {
       'company': '中电运行信息技术有限公司',
       'position': 'Web 前端工程师',
@@ -57,32 +69,18 @@ var resume = {
         'company': '海口亚乐科技有限公司',
         'position': 'Web 前端工程师',
         'website': '',
-        'startDate': '2017.05',
+        'startDate': '2016.07',
         'endDate': '2019.09',
         'summary': '海口亚乐科技有限公司',
         'highlights': [
-            '根据产品需求文档，进行 Web 前端开发，前端主体框架选型，搭建基础框架',
-            '根据设计提供的设计稿编写静态页面',
-            'Javascript 数据处理、Ajax 交互开发、前端公共组件开发',
-            '负责配合后台开发人员，完成页面的交互及接口对接',
-            '负责团队的前端开发质量，提高效率，实施前后端分离',
-            '负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平'
+          '前后端一体Jquery开发新社区云服务平台（物业管理系统）',
+          '从零 Vue全家桶搭建 房亲会/房公信 二手房买卖/分销经纪人代理平台',
+          '从零 Nuxt+Vuex+VueRouter+Axios+VantUi 开发雪顿云商 电商平台，涉及会员积分，更好的SEO商品收录',
+          '负责配合后台开发人员，完成页面的交互及接口对接',
+          '负责团队的前端开发质量，提高效率，实施前后端分离',
+          '负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平'
         ]
     },
-    {
-      'company': '简族信息技术有限公司',
-      'position': 'Web 前端工程师',
-      'website': '',
-      'startDate': '2016-7',
-      'endDate': '2017-04',
-      'summary': '简族信息技术有限公司',
-      'highlights': [
-          '参与物业管家项目的研发与测试',
-          '参与业务需求的分析与设计',
-          '负责web客户端开发，优化客户端版块',
-      ]
-    },
-      
   ],
   'project': [
     {
@@ -184,16 +182,15 @@ var resume = {
         ]
     },
     {
-      'organization': '美图文化',
+      'organization': '美图文化影像',
       'position': 'Web 前端工程师',
-      'website': 'http://www.foto2.cn',
+      'website': 'http://www.chengmainews.com/',
       'startDate': '2019.02',
       'endDate': '2019.03',
       'summary': 'PC 移动',
       'highlights': [
-          '公司门户信息类网站，主要展示公司发布的信息文章，配有后台管理，所有信息均可动态配置，如：网站logo，导航栏分类，首页模块，关于我们页内容。',
-          '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-          'Nuxt + Webpack + ES6',
+          '现澄迈新闻影像，影像照片发布/新闻资讯，配有后台管理，所有信息均可动态配置，如：网站logo，导航栏分类，首页模块，关于我们页内容。',
+          '一手搭建 Nuxt+Vuex+Axios',
       ]
     },
     {
@@ -317,15 +314,12 @@ var resume = {
           'name': '前端',
           'level': 'master',
           'keywords': [
-              'HTML',
-              'CSS',
-              'Javascript',
-              'Stylus',
-              'PostCSS',
-              'Webpack',
-              'Vue',
-              'Nuxt',
-              '微信小程序',
+              'Vue/Nuxt',
+              'Stylus/Sass',
+              'Webpack/Vue-cli/Vite',
+              '微信小程序/公众号开发',
+              'Uniapp',
+              'Electron',
           ]
       },
       {
@@ -334,12 +328,20 @@ var resume = {
           'keywords': [
               'NodeJS',
           ]
-      }
+      },
+      {
+        'name': '自动化测试',
+        'level': 'master',
+        'keywords': [
+            'Auto.js',
+            'Airtest',
+        ]
+    },
   ],
   'languages': [
     {
-      'language': '中文',
-      'fluency': '母语'
+      'language': '英语',
+      'fluency': ''
     }
   ],
   'interests': [
