@@ -14,8 +14,7 @@ var resume = {
       'summary': [
           '5年前端开发经验，项目类型涉及：教育直播、电子商务、房产交易、跨平台开发 h5/各大小程序/App，桌面应用',
           '技术栈：Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, Electron, threejs, 直播技术, 3D可视化, Nodejs, Egg.js...），喜欢关注新技术，对于新技术有很强的学习兴趣，目标全栈',
-          // '喜欢折腾造轮子，有一些简单的开源项目，不定时会更新 Github 小项目 5k+ Star（https://github.com/skyvow）',
-          '热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐'
+          '正在攻破Eggjs/Elasticsearch/Redis/后台支付...'
       ],
       'location': '海口市龙华区',
       'profiles': [
