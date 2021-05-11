@@ -89,7 +89,7 @@ var resume = {
       'website': 'http://www.xsqhomes.com/',
       'startDate': '2016.8',
       'endDate': '2017.4',
-      'summary': 'H5 开发',
+      'summary': '响应式',
       'highlights': [
         '物业管理系统',
         '四大模块： 物业公司后台/业主微信端/系统管理平台/物业人员移动端',
