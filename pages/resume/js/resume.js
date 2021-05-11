@@ -3,8 +3,8 @@ var resume = {
       'position': 'Web 前端工程师',
       'name': '王攀',
       'gender': '男',
-      'age': '27',
-      'worklife': '4',
+      'age': '29',
+      'worklife': '5',
       'label': '断剑重铸之日，骑士归来之时',
       'picture': '/static/images/avatar.jpg',
       'email': '375277023@qq.com',
@@ -12,8 +12,8 @@ var resume = {
       'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
-          '5年前端开发经验，参与或独立开发过多个核心项目，项目类型涉及：教育直播、电子商务、房地产、企业管理、SPA 应用（PC/Moblie）、手机App 等等',
-          '技术涉及Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, Electron, threejs, 直播技术, 3D可视化, Nodejs, Egg.js...），喜欢关注新技术，对于新技术有很强的学习兴趣，目标全栈',
+          '5年前端开发经验，项目类型涉及：教育直播、电子商务、房产交易、跨平台开发 h5/各大小程序/App，桌面应用',
+          '技术栈：Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, Electron, threejs, 直播技术, 3D可视化, Nodejs, Egg.js...），喜欢关注新技术，对于新技术有很强的学习兴趣，目标全栈',
           // '喜欢折腾造轮子，有一些简单的开源项目，不定时会更新 Github 小项目 5k+ Star（https://github.com/skyvow）',
           '热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐'
       ],
@@ -29,27 +29,30 @@ var resume = {
   },
   'work': [
     {
-      'company': '夜猫',
+      'company': '深圳夜猫信息科技有限公司',
       'position': 'Web 前端工程师',
       'website': '',
-      'startDate': '2020.03',
-      'endDate': '2020.08',
-      'summary': '中电运行信息技术有限公司',
+      'startDate': '2020.08',
+      'endDate': '至今',
+      'summary': 'Uniapp 微信小程序 Electron Eggjs',
       'highlights': [
-          'web sorder解决倒计时卡顿问题',
-          '维护寰宇学院线上、线下平台',
+          '从零搭建 类美团餐饮平台， 集 平台、商家、门店 为一体的后台管理系统',
+          '开发 团购，拼团、砍价 优惠券、红包、代金券 分销等多种营销功能',
+          '小程序使用Uniapp web worker解决IOS时间倒计时卡顿问题，生成活动海报',
+          '使用websocket Electron开发桌面版后台，解决实施打印订单小票问题，并且可以实时多台打印机打印不同小票（前台后厨），实现自动更新，引入C++模块实现调节系统音量',
       ]
     },
     {
-      'company': '中电运行信息技术有限公司',
+      'company': '中电运行（海南）信息技术有限公司',
       'position': 'Web 前端工程师',
       'website': '',
       'startDate': '2020.03',
       'endDate': '2020.08',
-      'summary': '中电运行信息技术有限公司',
+      'summary': 'Vue Nuxt',
       'highlights': [
-          '完成寰宇学院 课程直播、大赛服务、前后台权限板块的开发',
-          '维护寰宇学院线上、线下平台',
+          '完成寰宇学院 七牛云实现课程直播、大赛服务、前后台账户角色权限板块的开发',
+          '解决寰宇学院新闻页刷新403历史遗留问题（Nuxt generate打包嵌套路由缺少index.vue导致）',
+          '解决寰宇学院新闻页SEO源代码历史遗留问题（配置Nuxt generate.routes打包新闻列表为静态页）',
       ]
     },
     {
@@ -58,11 +61,11 @@ var resume = {
       'website': '',
       'startDate': '2019.10',
       'endDate': '2020.03',
-      'summary': '海南微窝网络科技有限公司',
+      'summary': 'Vue Cordova Websocket Uniapp',
       'highlights': [
-          '完成微窝房源App端',
-          '完成微窝房源项目的外链端',
-          '进行线上聊天研发测试',
+          'Vue+Cordova开发微窝房源App端，Cordova热更新实现、通讯录导入、极光推送、3D AR全景看房',
+          'Uniapp实现 微窝房源H5端（外链端），微信h5网页分享，websocket实现客服聊天（心跳机制防断开）',
+          'Python实现自动构建为Android/Ios包，并将Android包发布到应用宝，用XCode发布IOS应用',
       ]
     },
     {
@@ -71,14 +74,12 @@ var resume = {
         'website': '',
         'startDate': '2016.07',
         'endDate': '2019.09',
-        'summary': '海口亚乐科技有限公司',
+        'summary': 'Vue全家桶 Nuxt Axios VantUi',
         'highlights': [
           '前后端一体Jquery开发新社区云服务平台（物业管理系统）',
           '从零 Vue全家桶搭建 房亲会/房公信 二手房买卖/分销经纪人代理平台',
           '从零 Nuxt+Vuex+VueRouter+Axios+VantUi 开发雪顿云商 电商平台，涉及会员积分，更好的SEO商品收录',
-          '负责配合后台开发人员，完成页面的交互及接口对接',
-          '负责团队的前端开发质量，提高效率，实施前后端分离',
-          '负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平'
+          '从零 Nuxt+VantUi 开发户外徒步公益众筹平台，实现活动发布 在线支付 数据统计 图片上传 在线评论',
         ]
     },
   ],
@@ -122,7 +123,7 @@ var resume = {
           '二手房在线交易平台',
           '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护；',
           '实现了 附近找房，地图搜索，在线交易 在线聊天 等功能。',
-          '项目基于 Vue + Vue-router + Wepack + ES6 前端框架配合 NodeJS 开发环境开发，采用 Webpack 作为自动化构建工具，实时编译代码，热更新；',
+          '技术栈 Vue + Vue-router + Wepack + ES6',
           '后台：http://manager.fanggongxin.net/'
         ]
     },
@@ -132,11 +133,10 @@ var resume = {
         'website': 'http://www.tukeshare.com',
         'startDate': '2017.11',
         'endDate': '2018.03',
-        'summary': '户外徒步 众筹平台',
+        'summary': '户外徒步 众筹平台 微信支付',
         'highlights': [
-          '此项目为户外徒步众筹平台，主要功能有：活动发布，活动报名，在线支付，分享，众筹，互动中心，相册',
-          '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
-          'Nuxt + Webpack + ES6',
+          '给中国狮子联会使用的 户外徒步公益众筹平台，主要功能有：徒步活动发布，活动报名，在线支付，活动分享，捐款，互动中心（相册、评论），数据统计（捐款排行，队伍排行，区域排行）',
+          'Vue+Nuxt+Vant从零开发',
           '后台： http://manager.tukeshare.com'
         ]
     },
@@ -145,27 +145,13 @@ var resume = {
       'position': 'Web 前端工程师',
       'website': 'http://tu.tukeshare.com',
       'startDate': '2018.04',
-      'endDate': '2018.5',
-      'summary': '相册',
+      'endDate': '2018.09',
+      'summary': '瀑布流 相册',
       'highlights': [
-          '徒客共享的子项目，为户外活动提供图集展示，上传，支持文件夹上传。',
-          '我在此项目中担任 Web 前端工程师，负责参与项目的前端开发及维护，开发完成后，到自测阶段，再到发布正式环境。',
+          '徒客共享的子项目，为户外活动提供图集展示，上传，支持文件夹上传，瀑布流布局。',
           'Nuxt + Webpack + ES6',
           '后台： http://manager.tukeshare.com'
       ]
-    },
-    {
-        'organization': '一块扶贫',
-        'position': 'Web 前端工程师',
-        'website': 'http://fupin.yaleai.com/',
-        'startDate': '2018.07',
-        'endDate': '2018.09',
-        'summary': '众筹平台',
-        'highlights': [
-            '在线众筹捐助平台，类似于水滴筹，主要功能有：众筹发布，分享，在线支付，排行榜',
-            '根据 UI 提供的设计稿，百分百还原页面及其交互效果。',
-            '项目经验收，无重大漏洞，正式上线后，用户体验良好，功能完善。'
-        ]
     },
     {
         'organization': '雪顿云商',
@@ -175,8 +161,8 @@ var resume = {
         'endDate': '2019.2',
         'summary': '公众号 微信小程序',
         'highlights': [
-            '电商平台，有买家和商家模块，并有会员等级积分机制。',
-            '从项目搭建到项目上线，全部由我一个人完成，采用VantUi + Nuxt，同时配有小程序端。',
+            '牦牛奶制品电商平台，有买家和商家模块，并有会员等级积分机制。',
+            '独立开发从零构建到部署上线，VantUi + Nuxt',
             '系统后台： http://ysmanager.yaleai.com;',
             '商家后台 http://ysgl.yaleai.com;'
         ]
@@ -190,7 +176,7 @@ var resume = {
       'summary': 'PC 移动',
       'highlights': [
           '现澄迈新闻影像，影像照片发布/新闻资讯，配有后台管理，所有信息均可动态配置，如：网站logo，导航栏分类，首页模块，关于我们页内容。',
-          '一手搭建 Nuxt+Vuex+Axios',
+          '一手搭建 Nuxt+Vuex+Axios，前端实现模糊搜索，视频自动播放前10s',
       ]
     },
     {
@@ -199,26 +185,23 @@ var resume = {
         'website': 'http://www.dangguiwang.com',
         'startDate': '2019.05',
         'endDate': '2019.07',
-        'summary': '咨询网站',
+        'summary': '当归咨询网站',
         'highlights': [
-            '当归资讯网站',
-            '作为团队中的核心程序员，我负责项目的调研，根据产品需求文档进行需求拆分，技术选型与搭建框架等开发；',
-            'Nuxt + Webpack + ES6',
+            'Nuxt + ES6',
             '后台 http://manager.dangguiwang.com'
         ]
     },
     {
-      'organization': '微窝房源app',
+      'organization': '微窝房源App',
       'position': 'Web 前端开发',
       'website': '应用宝/App Store 微窝房源',
       'startDate': '2019.10',
       'endDate': '2020.03',
-      'summary': '集 在线房源 3D全景看房 客户管理 电子传单 于一体的房产类App',
+      'summary': 'App 热更新 消息推送 3D全景看房 Websocket',
       'highlights': [
-        '负责项目需求的完善，功能的修改',
-        '根据需求修改python打包工具',
+        '开发项目通讯录导入、3D全景看房、实现Cordova热更新、Python自动打包',
         '完成Android和IOS端App的打包测试 与上线',
-        'Vue + Webpack + ES6 + Cordova + uniapp',
+        'Vue + Websocket + Cordova + uniapp',
       ]
     },
     {
@@ -227,11 +210,10 @@ var resume = {
       'website': '云创服务',
       'startDate': '2020.03',
       'endDate': '2020.03',
-      'summary': '微商城，微信小程序电商平台',
+      'summary': '微商城 电商平台',
       'highlights': [
-        '负责小程序项目的搭建',
-        '完成项目的商家和买家板块',
-        '微信小程序 + Vant',
+        '一手搭建小程序项目，完成项目的商家和买家两大板块',
+        '微信小程序原生 + Vant',
       ]
     },
     {
@@ -240,12 +222,27 @@ var resume = {
       'website': 'https://huanyu.powerun.cn/',
       'startDate': '2020.4',
       'endDate': '2020.8',
-      'summary': 'Vue + 七牛云直播',
+      'summary': 'Nuxt 七牛云直播 权限管理 SEO',
       'highlights': [
           '在线互联网安全培训教育平台，主要模块有：直播课程、认证培训、大赛服务、知识交易等',
+          '负责寰宇学院 七牛云实现课程直播、大赛服务、前后台账户角色权限板块的开发',
           '项目基于 Vue + 七牛云直播，前后端分离',
           '负责 在线直播和大赛服务模块，修改项目需求和bug',
           '后台： https://huanyu.powerun.cn:9443',
+      ]
+    },
+    {
+      'organization': '美猫商家服务餐饮系统',
+      'position': 'Web 前端工程师',
+      'website': '',
+      'startDate': '2020.8',
+      'endDate': '至今',
+      'summary': '类美团餐饮平台 Vue Uniapp 微信小程序 Electron Websocket',
+      'highlights': [
+        '从零搭建Vue后台管理， 集 平台、商家、门店 为一体的后台管理系统, 开发 团购，拼团、砍价 优惠券、红包、代金券 分销等多种营销功能',
+        '小程序使用Uniapp, web worker解决IOS时间倒计时卡顿问题，生成活动海报',
+        '使用websocket Electron开发桌面版后台，解决实施打印订单小票问题，并且可以实时多台打印机打印不同小票（前台后厨），实现自动更新，引入C++模块实现调节系统音量',
+        '后台： http://admin.meimaoshenghuo.com/',
       ]
     },
   ],
