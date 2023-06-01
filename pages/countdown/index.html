@@ -1,0 +1,22 @@
+<html>
+<head>
+  </head>
+<body>
+  <time id="time"></time>
+ </body>
+</html>
+<script>
+function countdown(){
+let d,h,m,s;
+  const startDate=Date.UTC(2023,4,31,16,0,0,0)
+const endDate=Date.now()
+const diff=endDate-startDate
+d=~~(diff/24/3600/1000)
+  h=~~((diff-d*24*3600*1000)/3600/1000)
+  m=~~((diff-d*24*3600*1000-h*3600*1000)/60/1000)
+  s=~~(diff%(60*1000)/1000)
+  time.innerText=d+'天'+h+'时'+m+'分'+s'秒'
+  }
+  setInterval(countDown,1000)
+  
+</script>
