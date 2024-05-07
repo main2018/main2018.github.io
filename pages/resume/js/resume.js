@@ -4,7 +4,7 @@ var resume = {
       'name': '王攀',
       'gender': '男',
       'age': '29',
-      'worklife': '5',
+      'worklife': '7',
       'label': '断剑重铸之日，骑士归来之时',
       'picture': '/static/images/avatar.jpg',
       'email': '375277023@qq.com',
@@ -12,11 +12,11 @@ var resume = {
       'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
-          '5年前端开发经验，项目类型涉及：教育直播、电子商务、房产交易、跨平台开发 h5/各大小程序/App，桌面应用',
-          '技术栈：Vue, Nuxt, 微信小程序, 微信公众号, Flutter, uniapp, Electron, threejs, 直播技术, 3D可视化, Nodejs, Egg.js...），喜欢关注新技术，对于新技术有很强的学习兴趣，目标全栈',
-          '正在攻破Eggjs/Elasticsearch/Redis/后台支付...'
+          '7年前端开发经验，项目类型涉及：教育直播、电子商务、房产交易、跨平台开发 h5/各大小程序/App，桌面应用',
+          '技术栈：前端(Vue/Nuxt/微信小程序/微信公众号/直播), 跨平台(Uniapp/Hippy/Electron), 游戏(threejs/PixiJS/GalaceanEngine), 后端(NodeJS/NestJS/EggJS)...，喜欢关注新技术，对于新技术有很强的学习兴趣',
+          // '正在攻破Eggjs/Elasticsearch/Redis/后台支付...'
       ],
-      'location': '海口市龙华区',
+      'location': '北京-通州',
       'profiles': [
           {
             'network': 'github',
@@ -28,11 +28,27 @@ var resume = {
   },
   'work': [
     {
+      'company': '昆仑万维',
+      'position': 'Web 前端工程师',
+      'website': '',
+      'startDate': '2021.06',
+      'endDate': '至今',
+      'summary': 'Vue3 Pinia Webpack5 Vite Hippy GalaceanEngine PixiJs ThinkJS',
+      'highlights': [
+          '使用PixiJs和GalaceanEngine做了多个游戏活动，包括：水果夺宝、龙虎斗、盖楼、大消除等',
+          '项目测试环境部署重构，采用缓存和hash对比机制提升部署效率，并且采用命令方式通用于多个项目',
+          '开发smtinypng cli用于批量一键压缩工程图片，解决蓝湖下载文件压缩痛点',
+          '项目增加create命令用于多页面项目一键新建活动（可选项式创建）',
+          'Svelte项目Jenkins CICD部署 开发/测试/灰度/线上环境搭建',
+          'Vue3开发环境增加Vite启动方式，实现秒级启动提升开发效率',
+      ]
+    },
+    {
       'company': '深圳夜猫信息科技有限公司',
       'position': 'Web 前端工程师',
       'website': '',
       'startDate': '2020.08',
-      'endDate': '至今',
+      'endDate': '2021.06',
       'summary': 'Uniapp 微信小程序 Electron Eggjs',
       'highlights': [
           '从零搭建 类美团餐饮平台， 集 平台、商家、门店 为一体的后台管理系统',
@@ -311,18 +327,18 @@ var resume = {
           'level': 'master',
           'keywords': [
               'Vue/Nuxt',
-              'Stylus/Sass',
-              'Webpack/Vue-cli/Vite',
+              'Webpack/Rollup/Vite',
               '微信小程序/公众号开发',
-              'Uniapp',
+              'Uniapp/Hippy',
               'Electron',
+              'PixiJS/GalaceanEngine',
           ]
       },
       {
           'name': '后端',
           'level': 'master',
           'keywords': [
-              'NodeJS',
+              'NodeJS/NestJS/EggJS',
           ]
       },
       {
