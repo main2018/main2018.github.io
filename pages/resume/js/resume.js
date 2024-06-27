@@ -12,9 +12,10 @@ var resume = {
       'website': 'https://main2018.github.io',
       'codepen': 'https://codepen.io/main2018',
       'summary': [
-          '7年前端开发经验，项目类型涉及：教育直播、电子商务、房产交易、跨平台开发 h5/各大小程序/App，桌面应用',
-          '技术栈：前端(Vue/Nuxt/微信小程序/微信公众号/直播), 跨平台(Uniapp/Hippy/Electron), 游戏(threejs/PixiJS/GalaceanEngine), 后端(NodeJS/NestJS/EggJS)...，喜欢关注新技术，对于新技术有很强的学习兴趣',
-          // '正在攻破Eggjs/Elasticsearch/Redis/后台支付...'
+          '拥有丰富前端的开发经验，擅长跨领域项目实施，包括游戏、教育直播、电子商务及房产交易平台，成功涉足H5、各类小程 序、App及桌面应用的全栈前端开发。对前沿技术持续保持着高度的热情与快速学习能力，致力于通过技术创新推动产品迭代升 级，面对复杂技术挑战时，能够快速分析并提出切实可行的解决方案，确保项目顺利推进。',
+          '技术栈：前端(Vue/Nuxt /Webpack/Vite /微信小程序/微信公众号/直播), 跨平台(Uniapp/Hippy/Electron), 游戏(threejs/ PixiJS/GalaceanEngine), 后端(NodeJS/NestJS/EggJS)',
+          '具备一定的团队领导能力，有效驱动项目进度，达成目标领导并成功完成多个游戏项目的开发，不仅在技术实现上突破创新， 还有效管理多人开发小组，通过合理分工促进团队高效协作。',
+          '深入参与CI/CD流程优化，利用Jenkins实现自动化多环境打包部署，显著提升项目交付速度与质量。',
       ],
       'location': '北京-通州',
       'profiles': [
@@ -35,12 +36,13 @@ var resume = {
       'endDate': '至今',
       'summary': 'Vue3 Pinia Webpack5 Vite Hippy GalaceanEngine PixiJs ThinkJS',
       'highlights': [
-          '使用PixiJs和GalaceanEngine做了多个游戏活动，包括：水果夺宝、龙虎斗、盖楼、大消除等',
-          '项目测试环境部署重构，采用缓存和hash对比机制提升部署效率，并且采用命令方式通用于多个项目',
-          '开发smtinypng cli用于批量一键压缩工程图片，解决蓝湖下载文件压缩痛点',
-          '项目增加create命令用于多页面项目一键新建活动（可选项式创建）',
-          'Svelte项目Jenkins CICD部署 开发/测试/灰度/线上环境搭建',
-          'Vue3开发环境增加Vite启动方式，实现秒级启动提升开发效率',
+          '主导搭建与开发多次年中/年终活动模板，使用预加载和loading动画实现各板块的流畅切换。',
+          '使用 PixiJs和 GalaceanEngine 做了多个游戏活动，包括：水果夺宝、龙虎斗、盖楼、大消除等',
+          '项目测试环境部署重构，采用缓存和 hash 对比机制提升部署效率，并且采用命令方式通用于多个项目,部署效率提升60%',
+          '开发 smtinypng cli 用于批量一键压缩工程图片，解决蓝湖下载文件压缩痛点',
+          '项目增加 create 命令用于多页面项目一键新建活动（可选项式创建）',
+          'Svelte 项目 Jenkins CICD 部署 开发/测试/灰度/线上环境搭建',
+          'Vue 3开发环境增加 Vite 启动方式，实现秒级启动提升开发效率',
       ]
     },
     {
@@ -71,30 +73,20 @@ var resume = {
       ]
     },
     {
-      'company': '海南微窝网络科技有限公司',
-      'position': 'Web 前端工程师',
-      'website': '',
-      'startDate': '2019.10',
-      'endDate': '2020.03',
-      'summary': 'Vue Cordova Websocket Uniapp',
-      'highlights': [
-          'Vue+Cordova开发微窝房源App端，Cordova热更新实现、通讯录导入、极光推送、3D AR全景看房',
-          'Uniapp实现 微窝房源H5端（外链端），微信h5网页分享，websocket实现客服聊天（心跳机制防断开）',
-          'Python实现自动构建为Android/Ios包，并将Android包发布到应用宝，用XCode发布IOS应用',
-      ]
-    },
-    {
         'company': '海口亚乐科技有限公司',
         'position': 'Web 前端工程师',
         'website': '',
         'startDate': '2016.07',
-        'endDate': '2019.09',
+        'endDate': '2020.03',
         'summary': 'Vue全家桶 Nuxt Axios VantUi',
         'highlights': [
           '前后端一体Jquery开发新社区云服务平台（物业管理系统）',
           '从零 Vue全家桶搭建 房亲会/房公信 二手房买卖/分销经纪人代理平台',
           '从零 Nuxt+Vuex+VueRouter+Axios+VantUi 开发雪顿云商 电商平台，涉及会员积分，更好的SEO商品收录',
           '从零 Nuxt+VantUi 开发户外徒步公益众筹平台，实现活动发布 在线支付 数据统计 图片上传 在线评论',
+          'Vue+Cordova开发微窝房源App端，Cordova热更新实现、通讯录导入、极光推送、3D AR全景看房',
+          'Uniapp实现 微窝房源H5端（外链端），微信h5网页分享，websocket实现客服聊天（心跳机制防断开）',
+          'Python实现自动构建为Android/Ios包，并将Android包发布到应用宝，用XCode发布IOS应用',
         ]
     },
   ],
