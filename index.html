@@ -214,7 +214,7 @@
       </ul>
       
     </main> 
-    <div class="cd-folding-panel" :class="{'is-open': isOpen}" v-show="currentIndex !== 1">
+    <div class="cd-folding-panel" :class="{'is-open': isOpen}" v-show="currentIndex === 0">
       <div class="fold-left"></div>
       <div class="fold-right"></div>
       <div class="cd-fold-content">
@@ -246,7 +246,6 @@
         
         <h2><a href="./tools/resume.html" target="_blank">个人简历。</a></h2>
         <p>个人简历。</p>
-        <p>未完成。</p>
       </div>
       <a class="cd-close" @click="isOpen = false"></a>
     </div> 
@@ -270,6 +269,30 @@
       </div>
       <a class="cd-close" @click="isOpen = false"></a>
     </div> 
+    <div class="cd-folding-panel" :class="{'is-open': isOpen}" v-show="currentIndex === 2">
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+      <div class="cd-fold-content">
+        <p>
+          <em>🎮游戏🎮</em>
+        </p>
+        <h2><a href="./game/reversi/index.html" target="_blank">黑白棋</a></h2>
+        <p>javascript人机博弈--黑白棋</p>
+      </div>
+      <a class="cd-close" @click="isOpen = false"></a>
+    </div> 
+    <div class="cd-folding-panel" :class="{'is-open': isOpen}" v-show="currentIndex === 3">
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+      <div class="cd-fold-content">
+        <p>
+          <em>敬请期待</em>
+        </p>
+        <!-- <h2><a href="./game/reversi/index.html" target="_blank">黑白棋</a></h2>
+        <p>javascript人机博弈--黑白棋</p> -->
+      </div>
+      <a class="cd-close" @click="isOpen = false"></a>
+    </div> 
   </div>  
   <script>
     var app = new Vue({
@@ -282,8 +305,8 @@
         menus: [
           {title: '我的作品', desc: '小工具...'},
           {title: '效果展示', desc: '效果展示...'},
-          {title: '我的作品', desc: '小工具...'},
-          {title: '我的作品', desc: '小工具...'},
+          {title: '🎮游戏🎮', desc: '一些练手小游戏'},
+          {title: '敬请期待', desc: '开发中...'},
         ],
       },
       watch: {
